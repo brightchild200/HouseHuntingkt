@@ -19,7 +19,7 @@ class LoginActivity : AppCompatActivity() {
 
 //        val backArrow = findViewById<ImageView>(R.id.backArrow)
         val getStarted = findViewById<Button>(R.id.getStarted)
-        val register = findViewById<TextView>(R.id.reg)
+        val register = findViewById<Button>(R.id.reg)
 
         val email = findViewById<EditText>(R.id.email)
         val password = findViewById<EditText>(password)
