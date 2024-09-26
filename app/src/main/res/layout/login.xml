@@ -15,7 +15,7 @@
         android:contentDescription="Back"
         android:focusable="true"
         android:padding="16dp"
-        android:src="@drawable/leftarrow"
+        android:src="@drawable/arrow"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -79,31 +79,48 @@
         app:layout_constraintTop_toBottomOf="@id/password" />
 
     <TextView
-        android:id="@+id/reg"
+        android:id="@+id/register"
         android:layout_width="257dp"
         android:layout_height="57dp"
         android:layout_marginTop="68dp"
         android:clickable="true"
         android:focusable="true"
         android:padding="8dp"
-        android:text="New to                       ? Register"
+        android:text="New to                       ? "
         android:textColor="#8d8d8d"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/getStarted" />
 
+    <Button
+        android:id="@+id/reg"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.742"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/getStarted"
+        app:layout_constraintVertical_bias="0.213" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:fontFamily="@font/playfairdisplay_italic"
         android:text="House Hunting"
         android:textColor="@android:color/black"
         android:textSize="10sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="139dp"
-        tools:layout_editor_absoluteY="440dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.404"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/getStarted"
+        app:layout_constraintVertical_bias="0.249" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

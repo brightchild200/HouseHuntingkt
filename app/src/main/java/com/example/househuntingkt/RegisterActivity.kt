@@ -19,8 +19,7 @@ class RegisterActivity : AppCompatActivity() {
 
 //        val backArrow = findViewById<ImageView>(R.id.backArrow)
         val getStarted = findViewById<Button>(R.id.getStarted)
-        val login = findViewById<TextView>(R.id.login)
-
+        val login = findViewById<Button>(R.id.login)
         val name = findViewById<EditText>(R.id.name)
         val mobile = findViewById<EditText>(R.id.phone)
         val email = findViewById<EditText>(R.id.email)
