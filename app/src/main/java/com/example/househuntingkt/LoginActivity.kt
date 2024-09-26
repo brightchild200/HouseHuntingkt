@@ -11,18 +11,16 @@ import android.widget.TextView
 import android.widget.Toast
 import com.example.househuntingkt.R.id.password
 
-class RegisterActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.register)
+        setContentView(R.layout.login)
 
 //        val backArrow = findViewById<ImageView>(R.id.backArrow)
         val getStarted = findViewById<Button>(R.id.getStarted)
-        val login = findViewById<TextView>(R.id.login)
+        val register = findViewById<TextView>(R.id.reg)
 
-        val name = findViewById<EditText>(R.id.name)
-        val mobile = findViewById<EditText>(R.id.phone)
         val email = findViewById<EditText>(R.id.email)
         val password = findViewById<EditText>(password)
 
@@ -31,12 +29,10 @@ class RegisterActivity : AppCompatActivity() {
 
         // Handle Get Started button click
         getStarted.setOnClickListener {
-            val name = name.text.toString().trim()
-            val mobile = mobile.text.toString().trim()
             val email = email.text.toString().trim()
             val password = password.text.toString().trim()
 
-            if (name.isEmpty() || mobile.isEmpty() || email.isEmpty() || password.isEmpty()) {
+            if (email.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show()
             } else {
                 // You can proceed with form submission logic here
@@ -45,16 +41,16 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         // Redirect to LoginActivity
-
-        login.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
+        register.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
+
 
         // Delay of 3 seconds (3000ms)
         Handler(Looper.getMainLooper()).postDelayed({
             // Redirect to ActivityMain
-            val intent = Intent(this@RegisterActivity, DashboardActivity::class.java)
+            val intent = Intent(this@LoginActivity, DashboardActivity::class.java)
             startActivity(intent)
             finish() // To prevent returning to this activity
         }, 3000)

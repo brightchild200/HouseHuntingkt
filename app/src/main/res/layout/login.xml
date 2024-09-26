@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:background="#d9d9d9"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+    tools:context=".LoginActivity">
 
     <!-- Back Arrow and Title -->
     <ImageView
@@ -36,34 +36,6 @@
         app:layout_constraintStart_toEndOf="@id/backArrow"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/name"
-        android:layout_width="328dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="80dp"
-        android:hint="Name"
-        android:inputType="textPersonName"
-        android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titleText" />
-
-    <EditText
-        android:id="@+id/phone"
-        android:layout_width="308dp"
-        android:layout_height="63dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Mobile Number"
-        android:inputType="phone"
-        android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.76"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name" />
 
     <EditText
         android:id="@+id/email"
@@ -78,7 +50,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/phone" />
+        app:layout_constraintTop_toBottomOf="@id/titleText" />
 
     <EditText
         android:id="@+id/password"
@@ -107,18 +79,31 @@
         app:layout_constraintTop_toBottomOf="@id/password" />
 
     <TextView
-        android:id="@+id/login"
+        android:id="@+id/reg"
         android:layout_width="257dp"
         android:layout_height="57dp"
         android:layout_marginTop="68dp"
         android:clickable="true"
         android:focusable="true"
         android:padding="8dp"
-        android:text="Already have an account? Login"
+        android:text="New to                       ? Register"
         android:textColor="#8d8d8d"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/getStarted" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/playfairdisplay_italic"
+        android:text="House Hunting"
+        android:textColor="@android:color/black"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="139dp"
+        tools:layout_editor_absoluteY="440dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
