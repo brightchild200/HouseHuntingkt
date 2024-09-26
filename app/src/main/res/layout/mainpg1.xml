@@ -21,7 +21,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="448dp"
-        android:text="Navi mumbai-Nerul"
+        android:text="Navi mumbai-Nerul,G-1/103,Apartment"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
