@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="415dp"
+        android:layout_height="231dp"
+        app:srcCompat="@drawable/img2"
+        tools:layout_editor_absoluteX="-2dp"
+        tools:layout_editor_absoluteY="65dp" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="69dp"
+        android:layout_height="38dp"
+        app:srcCompat="@drawable/arrow"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="11dp" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="9000/-  onwards"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="37dp"
+        tools:layout_editor_absoluteY="319dp" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="399dp"
+        android:layout_height="49dp"
+        android:text="Collins live space, Seawoods                      Navi Mumbai"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="37dp"
+        tools:layout_editor_absoluteY="370dp" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PG Details"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="140dp"
+        tools:layout_editor_absoluteY="441dp" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="182dp"
+        android:layout_height="57dp"
+        android:text="Contact Owner"
+        tools:layout_editor_absoluteX="18dp"
+        tools:layout_editor_absoluteY="671dp" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="197dp"
+        android:layout_height="57dp"
+        android:text="RENT"
+        tools:layout_editor_absoluteX="213dp"
+        tools:layout_editor_absoluteY="666dp" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="274dp"
+        android:layout_height="67dp"
+        app:srcCompat="@drawable/logo"
+        tools:layout_editor_absoluteX="37dp"
+        tools:layout_editor_absoluteY="-2dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

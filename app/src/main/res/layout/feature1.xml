@@ -107,8 +107,8 @@
         android:layout_width="196dp"
         android:layout_height="53dp"
         android:text="contact owner"
-        tools:layout_editor_absoluteX="10dp"
-        tools:layout_editor_absoluteY="672dp" />
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="674dp" />
 
     <Button
         android:id="@+id/button5"
