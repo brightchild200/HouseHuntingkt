@@ -21,21 +21,21 @@
 
     <!-- Input Fields -->
 
+
     <TextView
         android:id="@+id/titleText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_width="218dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="@font/playfairdisplay_italic"
         android:text="House Hunting"
         android:textColor="@android:color/black"
-        android:textSize="20sp"
+        android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.315"
+        app:layout_constraintHorizontal_bias="0.33"
         app:layout_constraintStart_toEndOf="@id/backArrow"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <EditText
         android:id="@+id/email"
@@ -69,26 +69,28 @@
 
     <Button
         android:id="@+id/getStarted"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="147dp"
+        android:layout_height="53dp"
         android:layout_marginTop="60dp"
         android:padding="15dp"
         android:text="Get Started"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/password" />
+
     <TextView
         android:id="@+id/register"
         android:layout_width="257dp"
         android:layout_height="57dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="92dp"
         android:clickable="true"
         android:focusable="true"
         android:padding="8dp"
-        android:text="New to                       ? "
-        android:textColor="#8d8d8d"
+        android:text="New to                               ? "
+        android:textColor="@color/black"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/getStarted" />
 
@@ -99,12 +101,13 @@
         android:layout_height="wrap_content"
         android:text="Register"
         android:textColor="#000000"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.742"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/getStarted"
-        app:layout_constraintVertical_bias="0.213" />
+        app:layout_constraintVertical_bias="0.744" />
 
     <TextView
         android:id="@+id/textView"
@@ -113,14 +116,14 @@
         android:fontFamily="@font/playfairdisplay_italic"
         android:text="House Hunting"
         android:textColor="@android:color/black"
-        android:textSize="10sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.404"
+        app:layout_constraintHorizontal_bias="0.569"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/getStarted"
-        app:layout_constraintVertical_bias="0.249" />
+        app:layout_constraintVertical_bias="0.439" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
