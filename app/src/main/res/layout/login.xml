@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
+
+
     <!-- Back Arrow and Title -->
     <ImageView
         android:id="@+id/backArrow"
@@ -22,27 +24,12 @@
     <!-- Input Fields -->
 
 
-    <TextView
-        android:id="@+id/titleText"
-        android:layout_width="218dp"
-        android:layout_height="68dp"
-        android:layout_marginTop="32dp"
-        android:fontFamily="@font/playfairdisplay_italic"
-        android:text="House Hunting"
-        android:textColor="@android:color/black"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.33"
-        app:layout_constraintStart_toEndOf="@id/backArrow"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <EditText
         android:id="@+id/email"
         android:layout_width="300dp"
         android:layout_height="77dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:hint="Email Address"
         android:inputType="textEmailAddress"
@@ -50,14 +37,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titleText" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <EditText
         android:id="@+id/password"
         android:layout_width="294dp"
         android:layout_height="74dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="52dp"
         android:layout_marginEnd="16dp"
         android:hint="Password"
         android:inputType="textPassword"
@@ -124,6 +111,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/getStarted"
         app:layout_constraintVertical_bias="0.439" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="310dp"
+        android:layout_height="132dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.643"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/horilogo" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
