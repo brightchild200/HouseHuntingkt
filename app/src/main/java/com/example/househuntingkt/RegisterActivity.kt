@@ -7,7 +7,6 @@ import android.os.Handler
 import android.os.Looper
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import com.example.househuntingkt.R.id.password
 
@@ -30,12 +29,12 @@ class RegisterActivity : AppCompatActivity() {
 
         // Handle Get Started button click
         getStarted.setOnClickListener {
-            val name = name.text.toString().trim()
-            val mobile = mobile.text.toString().trim()
-            val email = email.text.toString().trim()
-            val password = password.text.toString().trim()
+            val tname = name.text.toString().trim()
+            val tmobile = mobile.text.toString().trim()
+            val temail = email.text.toString().trim()
+            val tpassword = password.text.toString().trim()
 
-            if (name.isEmpty() || mobile.isEmpty() || email.isEmpty() || password.isEmpty()) {
+            if (tname.isEmpty() || tmobile.isEmpty() || temail.isEmpty() || tpassword.isEmpty()) {
                 Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show()
             } else {
                 // You can proceed with form submission logic here
