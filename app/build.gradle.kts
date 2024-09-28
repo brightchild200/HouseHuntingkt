@@ -6,6 +6,10 @@ plugins {
 android {
     namespace = "com.example.househuntingkt"
     compileSdk = 34
+    android {
+
+
+    }
 
     defaultConfig {
         applicationId = "com.example.househuntingkt"
@@ -16,6 +20,11 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
+
+    defaultConfig {
+
+        }
+
 
     buildTypes {
         release {
@@ -47,3 +56,11 @@ dependencies {
 
     androidTestImplementation(libs.androidx.espresso.core)
 }
+
+
+
+
+
+
+
+
