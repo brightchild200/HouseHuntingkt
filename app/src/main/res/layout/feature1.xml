@@ -3,160 +3,192 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#f5f5dc"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#f5f5dc">
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="419dp"
-        android:layout_height="196dp"
-        app:srcCompat="@drawable/_4a46451ce9908ee3183e2245a273713"
-        tools:layout_editor_absoluteX="2dp"
-        tools:layout_editor_absoluteY="106dp" />
+    <!-- Logo at the top -->
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="41dp"
-        android:layout_height="70dp"
-        app:srcCompat="@drawable/arrow"
-        tools:layout_editor_absoluteX="5dp"
-        tools:layout_editor_absoluteY="1dp" />
+    <!-- CardView with image -->
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/searchBarCard"
+        android:layout_width="383dp"
+        android:layout_height="200dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="106dp">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/pg8"
+            tools:ignore="ContentDescription" />
+    </androidx.cardview.widget.CardView>
+
+    <!-- Rent details and PG information -->
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="7000/-  onwards"
+        android:text="7000/- onwards"
         android:textSize="22sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="302dp" />
+        app:layout_constraintTop_toBottomOf="@+id/searchBarCard"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cosmopolitian Girls PG in Nerul Navi Mumbai "
+        android:text="Cosmopolitan Girls PG in Nerul Navi Mumbai"
         android:textSize="17sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="346dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="prime location in nerul east near DY Patil University"
+        android:text="Prime location in Nerul East near DY Patil University"
         android:textSize="17sp"
-        tools:layout_editor_absoluteX="5dp"
-        tools:layout_editor_absoluteY="452dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp" />
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
+    <!-- CardView for PG details -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/details"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="PG Details"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="402dp" />
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Maintenance"
-        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:cardBackgroundColor="#ffffff"
+        app:cardElevation="4dp">
 
-        tools:layout_editor_absoluteX="46dp"
-        tools:layout_editor_absoluteY="502dp" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="-1dp"
+            tools:layout_editor_absoluteY="440dp">
 
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Notice period"
-        tools:layout_editor_absoluteX="284dp"
-        tools:layout_editor_absoluteY="502dp" />
+            <!-- PG Details Title -->
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="PG Details"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Electricity Charges"
-        tools:layout_editor_absoluteX="48dp"
-        tools:layout_editor_absoluteY="590dp" />
+            <!-- First Column: Maintenance, Electricity, Included -->
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Maintenance"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Parking"
-        tools:layout_editor_absoluteX="306dp"
-        tools:layout_editor_absoluteY="590dp" />
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="Electricity Charges"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="Included"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+            <!-- Second Column: Notice period, Parking, Included -->
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Notice period"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView9"
+                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="Parking"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView11"
+                app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="1 Month"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView13"
+                app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Buttons for Contact and Rent -->
     <Button
         android:id="@+id/button4"
         android:layout_width="196dp"
         android:layout_height="53dp"
-        android:text="contact owner"
-        tools:layout_editor_absoluteX="5dp"
-        tools:layout_editor_absoluteY="674dp" />
+        android:text="Contact Owner"
+        app:layout_constraintTop_toBottomOf="@+id/details"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp" />
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="197dp"
-        android:layout_height="54dp"
+        android:layout_width="196dp"
+        android:layout_height="53dp"
         android:text="Rent"
-        tools:layout_editor_absoluteX="215dp"
-        tools:layout_editor_absoluteY="673dp" />
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Included"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="534dp" />
-
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="1 Month"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="294dp"
-        tools:layout_editor_absoluteY="538dp" />
-
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Included"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="77dp"
-        tools:layout_editor_absoluteY="621dp" />
-
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Bike"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="308dp"
-        tools:layout_editor_absoluteY="621dp" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="446dp"
-        android:layout_height="80dp"
-        app:srcCompat="@drawable/horilogo"
-        tools:layout_editor_absoluteX="-7dp"
-        tools:layout_editor_absoluteY="8dp" />
+        app:layout_constraintTop_toBottomOf="@+id/details"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
