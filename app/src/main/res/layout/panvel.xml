@@ -48,17 +48,26 @@
                         android:textSize="21sp"
                         android:textStyle="bold"
                         android:fontFamily="@font/crossiantone_regular"
-                        android:text="Vitalia"
+                        android:text="Krishna Vandana PG"
                         />
 
                     <TextView
                         android:id="@+id/property_location1"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="17dp"
+                        android:layout_height="36dp"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/zillaslab_semibolditalic"
+                        android:text="Vichumbe, Panvel,Navi Mumbai"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/property_de1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="90dp"
+                        android:textSize="16dp"
                         android:fontFamily="@font/zillaslab_semibolditalic"
                         android:layout_marginStart="8dp"
-                        android:text="Dubai, Palm Jumeirah" />
+                        android:text="Our PG Basis is available in the same flat In one flat family as well as separately staying girls on another side with a Separate toilet Bathroom, Cot, Bed Cupboard, Kitchen events available TV." />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -68,7 +77,7 @@
                         android:orientation="horizontal">
 
                         <Button
-                            android:id="@+id/email_button1"
+                            android:id="@+id/email_btn1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
@@ -77,7 +86,7 @@
                             android:text="Email" />
 
                         <Button
-                            android:id="@+id/whatsapp_button1"
+                            android:id="@+id/whatsapp_btn1"
                             android:layout_width="156dp"
                             android:layout_height="match_parent"
                             android:layout_marginStart="100dp"
@@ -125,10 +134,20 @@
                         android:id="@+id/property_location2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="17dp"
+                        android:textSize="20dp"
                         android:fontFamily="@font/zillaslab_semibolditalic"
                         android:layout_marginStart="8dp"
-                        android:text="Dubai, International City" />
+                        android:text="Karanjade, New Panvel" />
+
+                    <TextView
+                        android:id="@+id/property_de2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:textSize="16dp"
+                        android:fontFamily="@font/zillaslab_semibolditalic"
+                        android:layout_marginStart="8dp"
+                        android:text="Move into Rashi, a professionally managed PG home in Karanjade, navi mumbai. Located in a safe neighborhood, this female PG offers various modern amenities for your comfort, such as Power Backup, TV, etc. This PG has Double Occupancy types. This PG is nearby major commercial and educational hubs. Please contact the seller to book this fast selling high in demand PG stay. " />
+
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -138,7 +157,7 @@
                         android:orientation="horizontal">
 
                         <Button
-                            android:id="@+id/email_button2"
+                            android:id="@+id/email_btn2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
@@ -147,7 +166,7 @@
                             android:text="Email" />
 
                         <Button
-                            android:id="@+id/whatsapp_button2"
+                            android:id="@+id/whatsapp_btn2"
                             android:layout_width="156dp"
                             android:layout_height="match_parent"
                             android:layout_marginStart="100dp"
@@ -184,7 +203,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:text="Vitalia"
+                        android:text="Arvind PG Panvel"
                         android:textColor="#454545"
                         android:textSize="21sp"
                         android:textStyle="bold"
@@ -194,10 +213,21 @@
                         android:id="@+id/property_location3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="17dp"
+                        android:textSize="20dp"
                         android:fontFamily="@font/zillaslab_semibolditalic"
                         android:layout_marginStart="8dp"
-                        android:text="Dubai, Palm Jumeirah" />
+                        android:text="Panvel, Navi Mumbai" />
+
+                    <TextView
+                        android:id="@+id/property_de3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:textSize="16dp"
+                        android:fontFamily="@font/zillaslab_semibolditalic"
+                        android:layout_marginStart="8dp"
+                        android:text="Located in Panvel, Navi Mumbai, Arvind PG Panvel is a Modern and Spacious PG Home that is Close to Major Educational Commercial hubs in the area. This Unisex PG offers all the Comforts like TV, AC, Food, Power Backup, Wi-Fi, etc. The PG has Strict Adherence to hygiene Standards and offers Single, Double, Triple, and Four Rooms. Please contact me in case you are interested or have Queried. Looking Forward to Serving you " />
+
+
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -207,7 +237,7 @@
                         android:orientation="horizontal">
 
                         <Button
-                            android:id="@+id/email_button2"
+                            android:id="@+id/email_btn3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
@@ -216,7 +246,7 @@
                             android:text="Email" />
 
                         <Button
-                            android:id="@+id/whatsapp_button2"
+                            android:id="@+id/whatsapp_btn3"
                             android:layout_width="156dp"
                             android:layout_height="match_parent"
                             android:layout_marginStart="100dp"
@@ -254,7 +284,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:text="Vitalia"
+                        android:text="Swami PG"
                         android:textColor="#454545"
                         android:textSize="21sp"
                         android:textStyle="bold"
@@ -265,10 +295,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:textSize="17dp"
+                        android:textSize="20dp"
                         android:fontFamily="@font/zillaslab_semibolditalic"
-                        android:text="Dubai, Palm Jumeirah" />
+                        android:text="New Panvel, Navi Mumbai" />
 4
+                    <TextView
+                        android:id="@+id/property_de4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:textSize="16dp"
+                        android:fontFamily="@font/zillaslab_semibolditalic"
+                        android:layout_marginStart="8dp"
+                        android:text="Move into Swami PG, a professionally managed PG home in the New Panvel, Navi Mumbai. Located in a safe neighborhood, this male PG offers various modern amenities for your comfort. This PG has double occupancy types. This PG is nearby major commercial and educational hubs. Please contact the seller to book this fast selling high in demand PG stay.  " />
+
+
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

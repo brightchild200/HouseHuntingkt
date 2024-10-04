@@ -8,16 +8,16 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class Panvel(private val propertyList: List<Property>) :
-    RecyclerView.Adapter<Panvel.PropertyViewHolder>() {
+class PanvelActivity(private val propertyList: List<Property>) :
+    RecyclerView.Adapter<PanvelActivity.PropertyViewHolder>() {
 
     class PropertyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val propertyImage1: ImageView = itemView.findViewById(R.id.property_image1)
         val propertyName1: TextView = itemView.findViewById(R.id.property_name1)
 
         val propertyLocation1: TextView = itemView.findViewById(R.id.property_location1)
-        val emailButton1: Button = itemView.findViewById(R.id.email_button1)
-        val whatsappButton1: Button = itemView.findViewById(R.id.whatsapp_button1)
+        val emailButton1: Button = itemView.findViewById(R.id.email_btn1)
+        val whatsappButton1: Button = itemView.findViewById(R.id.whatsapp_btn1)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PropertyViewHolder {

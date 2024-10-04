@@ -55,6 +55,6 @@ class RegisterActivity : AppCompatActivity() {
             val intent = Intent(this@RegisterActivity, DashboardActivity::class.java)
             startActivity(intent)
             finish() // To prevent returning to this activity
-        }, 3000)
+        }, 5000)
     }
 }
