@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".Panvel_Pg1" />
+        <activity android:name=".PanvelPg1" />
         <activity android:name=".PanvelActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".DashboardActivity" />
