@@ -322,7 +322,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
                         android:fontFamily="@font/crossiantone_regular"
-                        android:text="SwamiSadan CHS"
+                        android:text="VIdyaVihar CHS"
                         android:textColor="#454545"
                         android:textSize="21sp"
                         android:textStyle="bold" />
@@ -333,7 +333,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:fontFamily="@font/zillaslab_semibolditalic"
-                        android:text="Near D Y Patil Hospital,Nerul, Navi Mumbai"
+                        android:text="Near Vashi Railway Station, Navi Mumbai"
                         android:textSize="20dp" />
                     4
 
@@ -343,7 +343,7 @@
                         android:layout_height="100dp"
                         android:layout_marginStart="8dp"
                         android:fontFamily="@font/zillaslab_semibolditalic"
-                        android:text="Move into SwamiSadan, a professionally managed PG home in the New Panvel, Navi Mumbai. Located in a safe neighborhood, this male PG offers various modern amenities for your comfort. This PG has double occupancy types. This PG is nearby major commercial and educational hubs. Please contact the seller to book this fast selling high in demand PG stay.  "
+                        android:text="It is a professionally managed PG home in Vashi. Located in a safe neighborhood, this male PG offers various modern amenities for your comfort. This PG is nearby major commercial and educational hubs.contact the seller to book this fast selling high in demand PG!"
                         android:textSize="16dp" />
 
 
