@@ -27,6 +27,8 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".Nerul" />
         <activity android:name=".Nerul1" />
+        <activity android:name=".Vashi" />
+        <activity android:name=".Vashi1" />
         <activity android:name=".PanvelPg1" />
         <activity android:name=".PanvelActivity" />
         <activity android:name=".LoginActivity" />

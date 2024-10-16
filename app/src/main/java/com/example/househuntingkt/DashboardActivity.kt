@@ -54,10 +54,10 @@ class DashboardActivity : AppCompatActivity() {
 //            startActivity(intent)
 //        }
         // Panvel button click listener to go to PanvelActivity
-//        vashi.setOnClickListener {
-//            val intent = Intent(this, VashiActivity::class.java)
-//            startActivity(intent)
-//        }
+        vashi.setOnClickListener {
+            val intent = Intent(this, Vashi::class.java)
+            startActivity(intent)
+        }
 //
 //        // Panvel button click listener to go to PanvelActivity
         nerul.setOnClickListener {

@@ -6,11 +6,7 @@
     android:background="#f5f5dc"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="vashi.xml" />
+
 
     <ImageView
         android:id="@+id/backArrow"
@@ -20,12 +16,9 @@
         android:contentDescription="Back"
         android:focusable="true"
         android:padding="16dp"
-        android:src="@drawable/arrow"
+        app:srcCompat="@drawable/arrow"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-
-    <!-- ScrollView to enable scrolling -->
 
     <ImageView
         android:id="@+id/imageView"
@@ -33,7 +26,6 @@
         android:layout_height="75dp"
         app:layout_constraintBottom_toTopOf="@+id/scrollnerul"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.338"
         app:layout_constraintStart_toEndOf="@+id/backArrow"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
@@ -41,12 +33,12 @@
 
     <ScrollView
         android:id="@+id/scrollnerul"
-        android:layout_width="413dp"
+        android:layout_width="0dp"
         android:layout_height="640dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="85dp">
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- LinearLayout to hold multiple card sections -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -55,23 +47,11 @@
 
             <!-- First CardView Section -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/first"
+                android:id="@+id/firstv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 app:cardCornerRadius="18dp"
-                app:cardElevation="4dp">
-
-            </androidx.cardview.widget.CardView>
-
-            <!-- Repeat for additional card sections -->
-            <!-- Second CardView Section -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/second"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="8dp"
                 app:cardElevation="4dp">
 
                 <LinearLayout
@@ -80,14 +60,14 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/property_image3"
+                        android:id="@+id/vashiimg1"
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/pg3" />
+                        app:srcCompat="@drawable/pg3" />
 
                     <TextView
-                        android:id="@+id/property_name2"
+                        android:id="@+id/vashiname1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
@@ -98,23 +78,102 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/property_location2"
+                        android:id="@+id/vashilocation1"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="36dp"
                         android:layout_marginStart="8dp"
                         android:fontFamily="@font/zillaslab_semibolditalic"
                         android:text="Near Inorbit Mall,Vashi"
                         android:textSize="20dp" />
 
                     <TextView
-                        android:id="@+id/property_de2"
+                        android:id="@+id/vashi_de1"
                         android:layout_width="wrap_content"
-                        android:layout_height="100dp"
+                        android:layout_height="90dp"
                         android:layout_marginStart="8dp"
                         android:fontFamily="@font/zillaslab_semibolditalic"
                         android:text="Experience flexible living with separate spaces for families and individuals in the same flat, each with private bathrooms. Fully furnished with a cot, bed, kitchen access, and TV. Ideal for anyone seeking comfort and convenience! "
                         android:textSize="16dp" />
 
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:gravity="end"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/email_btn1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:backgroundTint="@color/material_dynamic_neutral_variant20"
+                            android:text="Email"
+                            android:textSize="20dp" />
+
+                        <Button
+                            android:id="@+id/whatsapp_btn1"
+                            android:layout_width="156dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="100dp"
+                            android:backgroundTint="@color/material_dynamic_neutral_variant20"
+                            android:text="WhatsApp"
+                            android:textSize="20dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Repeat for additional card sections -->
+            <!-- Second CardView Section -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/secondv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/vashiimg2"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/pg8" />
+
+                    <TextView
+                        android:id="@+id/vashi_name2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:fontFamily="@font/crossiantone_regular"
+                        android:text="Saiyog Apartment"
+                        android:textColor="#454545"
+                        android:textSize="21sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/vashi_location2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/zillaslab_semibolditalic"
+                        android:text="Near Raghuleela Mall,Vashi"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/vashi_de2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/zillaslab_semibolditalic"
+                        android:text="Our PG offers family and girls-only accommodations in the same flat, each with a separate bathroom. Amenities include a cot, bed, cupboard, kitchen, and TV"
+                        android:textSize="16dp" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -127,7 +186,6 @@
                             android:id="@+id/email_btn2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
                             android:backgroundTint="@color/material_dynamic_neutral_variant20"
                             android:text="Email"
                             android:textSize="20dp" />
@@ -135,156 +193,7 @@
                         <Button
                             android:id="@+id/whatsapp_btn2"
                             android:layout_width="156dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginStart="100dp"
-                            android:backgroundTint="@color/material_dynamic_neutral_variant20"
-                            android:text="WhatsApp"
-                            android:textSize="20dp" />
-                    </LinearLayout>
-
-                    <ImageView
-                        android:id="@+id/property_image1"
-                        android:layout_width="match_parent"
-                        android:layout_height="200dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/pg8" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/property_name1"
-                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:fontFamily="@font/crossiantone_regular"
-                            android:text="Saiyog Apartment"
-                            android:textColor="#454545"
-                            android:textSize="21sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/property_location1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="36dp"
-                            android:layout_marginStart="8dp"
-                            android:fontFamily="@font/zillaslab_semibolditalic"
-                            android:text="Near Raghuleela Mall,Vashi"
-                            android:textSize="20dp" />
-
-                        <TextView
-                            android:id="@+id/property_de1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="90dp"
-                            android:layout_marginStart="8dp"
-                            android:fontFamily="@font/zillaslab_semibolditalic"
-                            android:text="Our PG offers family and girls-only accommodations in the same flat, each with a separate bathroom. Amenities include a cot, bed, cupboard, kitchen, and TV"
-                            android:textSize="16dp" />
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:gravity="end"
-                            android:orientation="horizontal">
-
-                            <Button
-                                android:id="@+id/email_btn1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="20dp"
-                                android:backgroundTint="@color/material_dynamic_neutral_variant20"
-                                android:text="Email"
-                                android:textSize="20dp" />
-
-                            <Button
-                                android:id="@+id/whatsapp_btn1"
-                                android:layout_width="156dp"
-                                android:layout_height="match_parent"
-                                android:layout_marginStart="100dp"
-                                android:backgroundTint="@color/material_dynamic_neutral_variant20"
-                                android:text="WhatsApp"
-                                android:textSize="20dp" />
-                        </LinearLayout>
-
-                        <ImageView
-                            android:id="@+id/property_image2"
-                            android:layout_width="match_parent"
-                            android:layout_height="200dp"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/pg7" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!--            3rd card view -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/third"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="4dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/property_name3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:fontFamily="@font/crossiantone_regular"
-                        android:text="The Heights"
-                        android:textColor="#454545"
-                        android:textSize="21sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/property_location3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:fontFamily="@font/zillaslab_semibolditalic"
-                        android:text="Vashi, Navi Mumbai"
-                        android:textSize="20dp" />
-
-                    <TextView
-                        android:id="@+id/property_de3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="100dp"
-                        android:layout_marginStart="8dp"
-                        android:fontFamily="@font/zillaslab_semibolditalic"
-                        android:text="Located in Vashi, Navi Mumbai, This PG is a Modern and Spacious PG Home that is Close to Major Educational Commercial hubs in the area. This Unisex PG offers all the Comforts like TV, AC, Food, Wi-Fi, etc. The PG has Strict Adherence to hygiene Standards and offers Single, Double, Triple Rooms. Please contact me in case you are interested. Looking Forward to Serving you "
-                        android:textSize="16dp" />
-
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:gravity="end"
-                        android:orientation="horizontal">
-
-                        <Button
-                            android:id="@+id/email_btn3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
-                            android:backgroundTint="@color/material_dynamic_neutral_variant20"
-                            android:text="Email"
-                            android:textSize="20dp" />
-
-                        <Button
-                            android:id="@+id/whatsapp_btn3"
-                            android:layout_width="156dp"
-                            android:layout_height="match_parent"
                             android:layout_marginStart="100dp"
                             android:backgroundTint="@color/material_dynamic_neutral_variant20"
                             android:text="WhatsApp"
@@ -293,91 +202,7 @@
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
-
-
-            <!--            4th card view -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/fourth"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="4dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/property_image4"
-                        android:layout_width="match_parent"
-                        android:layout_height="200dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/pg6" />
-
-                    <TextView
-                        android:id="@+id/property_name4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:fontFamily="@font/crossiantone_regular"
-                        android:text="SwamiSadan CHS"
-                        android:textColor="#454545"
-                        android:textSize="21sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/property_location4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:fontFamily="@font/zillaslab_semibolditalic"
-                        android:text="Near D Y Patil Hospital,Nerul, Navi Mumbai"
-                        android:textSize="20dp" />
-                    4
-
-                    <TextView
-                        android:id="@+id/property_de4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="100dp"
-                        android:layout_marginStart="8dp"
-                        android:fontFamily="@font/zillaslab_semibolditalic"
-                        android:text="Move into SwamiSadan, a professionally managed PG home in the New Panvel, Navi Mumbai. Located in a safe neighborhood, this male PG offers various modern amenities for your comfort. This PG has double occupancy types. This PG is nearby major commercial and educational hubs. Please contact the seller to book this fast selling high in demand PG stay.  "
-                        android:textSize="16dp" />
-
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:gravity="end"
-                        android:orientation="horizontal">
-
-                        <Button
-                            android:id="@+id/email_button2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
-                            android:backgroundTint="@color/material_dynamic_neutral_variant20"
-                            android:text="Email"
-                            android:textSize="20dp" />
-
-                        <Button
-                            android:id="@+id/whatsapp_button2"
-                            android:layout_width="156dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginStart="100dp"
-                            android:backgroundTint="@color/material_dynamic_neutral_variant20"
-                            android:text="WhatsApp"
-                            android:textSize="20dp" />
-                    </LinearLayout>
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-            <!-- You can add more sections similarly -->
 
         </LinearLayout>
     </ScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
