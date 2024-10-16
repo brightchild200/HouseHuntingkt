@@ -12,8 +12,8 @@ class Vashi : AppCompatActivity() {
         setContentView(R.layout.vashi)
 
         // Find ImageViews by ID
-        val vashiimg1 = findViewById<ImageView>(R.id.vashiimg1)
-        val propertyImage2 = findViewById<ImageView>(R.id.vashiimg2)
+        val vashiimg1 = findViewById<ImageView>(R.id.vashiImg1)
+        val vashiimg2 = findViewById<ImageView>(R.id.vashiimg2)
 //            val propertyImage3 = findViewById<ImageView>(R.id.nerulim3)
 //            val propertyImage4 = findViewById<ImageView>(R.id.property_image4)
 
@@ -23,7 +23,7 @@ class Vashi : AppCompatActivity() {
             startActivity(intent)
         }
 
-        propertyImage2.setOnClickListener {
+        vashiimg2.setOnClickListener {
             val intent = Intent(this, Vashi1::class.java)
             startActivity(intent)
         }

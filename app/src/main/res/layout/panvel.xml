@@ -302,7 +302,7 @@
                         android:textSize="20dp"
                         android:fontFamily="@font/zillaslab_semibolditalic"
                         android:text="New Panvel, Navi Mumbai" />
-4
+
                     <TextView
                         android:id="@+id/property_de4"
                         android:layout_width="wrap_content"
