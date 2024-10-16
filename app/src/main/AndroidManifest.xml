@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
 
     <application
@@ -24,6 +25,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".RegisterActivity" />
+        <activity android:name=".Nerul" />
+        <activity android:name=".Nerul1" />
         <activity android:name=".PanvelPg1" />
         <activity android:name=".PanvelActivity" />
         <activity android:name=".LoginActivity" />
