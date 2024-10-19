@@ -32,7 +32,7 @@ class DashboardActivity : AppCompatActivity() {
 //        panvelButton = findViewById(R.id.btnCity1) // Panvel button ID should match your layout
         searchBar = findViewById(R.id.searchBar) // Search bar ID should match your layout
         vashi = findViewById(R.id.btnCity2)
-        seawoods = findViewById<Button>(R.id.btnCity3)
+        seawoods = findViewById(R.id.btnCity3)
         nerul = findViewById(R.id.btnCity1)
 
         // Back arrow functionality to go to RegisterActivity
@@ -41,36 +41,7 @@ class DashboardActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-
-//        propertyimage1.setOnClickListener {
-////            val intent = Intent(this, PanvelPg1::class.java)
-////            startActivity(intent)
-////
-////        }
 //
-//        // Panvel button click listener to go to PanvelActivity
-//        panvelButton.setOnClickListener {
-//            val intent = Intent(this, PanvelActivity::class.java)
-//            startActivity(intent)
-//        }
-        // Panvel button click listener to go to PanvelActivity
-//        vashi.setOnClickListener {
-//            val intent = Intent(this, Vashi::class.java)
-//            startActivity(intent)
-//        }
-//
-//        // Panvel button click listener to go to PanvelActivity
-        nerul.setOnClickListener {
-            val intent = Intent(this, Nerul::class.java)
-            startActivity(intent)
-        }
-//
-//        // Panvel button click listener to go to PanvelActivity
-//        seawoods.setOnClickListener {
-//            val intent = Intent(this,SeawoodsActivity::class.java)
-//            startActivity(intent)
-//        }
-
         // Initialize the property list with some data
         propertyList = listOf(
             Property(
@@ -122,10 +93,10 @@ class DashboardActivity : AppCompatActivity() {
 //                        val intent = Intent(this@DashboardActivity, PanvelActivity::class.java)
 //                        startActivity(intent)
 //                    }
-//                    "vashi" -> {
-//                        val intent = Intent(this@DashboardActivity, VashiActivity::class.java)
-//                        startActivity(intent)
-//                    }
+                    "vashi" -> {
+                        val intent = Intent(this@DashboardActivity, Vashi::class.java)
+                        startActivity(intent)
+                    }
                     "nerul" -> {
                         val intent = Intent(this@DashboardActivity, Nerul::class.java)
                         startActivity(intent)

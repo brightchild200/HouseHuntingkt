@@ -11,17 +11,25 @@ class Vashi : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.vashi)
 
+        // Back button to navigate to Nerul page
+        val backButton: ImageView = findViewById(R.id.backArrow)
+        backButton.setOnClickListener {
+            val intent = Intent(this, DashboardActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
 //        // Find ImageViews by ID
-//        val vashiimg1 = findViewById<ImageView>(R.id.vashiImg1)
+        val vashiimg1 = findViewById<ImageView>(R.id.vashiImg1)
 //        val vashiimg2 = findViewById<ImageView>(R.id.vashiimg2)
 //            val propertyImage3 = findViewById<ImageView>(R.id.nerulim3)
 //            val propertyImage4 = findViewById<ImageView>(R.id.property_image4)
 //
 //        // Set click listeners for each image
-//        vashiimg1.setOnClickListener {
-//            val intent = Intent(this, Vashi1::class.java)
-//            startActivity(intent)
-//        }
+        vashiimg1.setOnClickListener {
+            val intent = Intent(this, Vashi1::class.java)
+            startActivity(intent)
+        }
 //
 //        vashiimg2.setOnClickListener {
 //            val intent = Intent(this, Vashi1::class.java)

@@ -32,7 +32,7 @@
 
     <!-- ScrollView starts below the ImageView -->
     <ScrollView
-        android:id="@+id/scrollvashi1"
+        android:id="@+id/scrollvashi2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
@@ -56,7 +56,7 @@
                     android:id="@+id/imageView4"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:srcCompat="@drawable/pg3"
+                    app:srcCompat="@drawable/pg8"
                     tools:ignore="ContentDescription" />
             </androidx.cardview.widget.CardView>
 
@@ -65,7 +65,7 @@
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Rs. 12000 "
+                android:text="Rs. 500 / day"
                 android:textSize="22sp"
                 android:textStyle="bold"
                 android:layout_marginStart="16dp"
@@ -75,7 +75,7 @@
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="West End ,Near Inorbit Mall,Vashi"
+                android:text="Saiyog Apartment ,Near Inorbit Mall,Vashi"
                 android:fontFamily="@font/crossiantone_regular"
                 android:textSize="18dp"
                 android:textStyle="bold"
@@ -90,7 +90,7 @@
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/playfair_display"
                 android:textStyle="bold"
-                android:text="Experience flexible living with separate spaces for families and individuals in the same flat, each with private bathrooms. Fully furnished with a cot, bed, kitchen access, and TV. Ideal for anyone seeking comfort and convenience!"
+                android:text="Our PG offers family and girls-only accommodations in the same flat, each with a separate bathroom. Amenities include a cot, bed, cupboard, kitchen, and TV"
                 android:textSize="18sp" />
 
             <!-- PG Details ConstraintLayout -->
@@ -121,7 +121,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
-                    android:text="Covered Area: 350 sqft\nConfiguration: 1 Bed, 1 Bath\nLocation: Vashi, Navi Mumbai"
+                    android:text="\nConfiguration: 2 Bedroom, 1 Bath\nLocation: Vashi, Navi Mumbai+"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView8" />
@@ -132,7 +132,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
-                    android:text="Vashi stn is at 5 mins walking distance"
+                    android:text="Near Raguleela mall"
                     android:textSize="22sp"
                     android:textColor="@color/material_dynamic_tertiary10"
                     android:fontFamily="@font/zillaslab_lightitalic"
@@ -142,21 +142,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
-
-<!--        <LinearLayout-->
-<!--            android:id="@+id/rule"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:orientation="horizontal"-->
-<!--            android:layout_marginTop="16dp"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            android:gravity="center_horizontal">-->
-<!--            -->
-<!--            -->
-
-<!--        </LinearLayout>-->
-
-   </ScrollView>
+    </ScrollView>
 
     <!-- LinearLayout to align the buttons horizontally -->
     <LinearLayout

@@ -2,6 +2,7 @@ package com.example.househuntingkt
 
     import android.content.Intent
     import android.os.Bundle
+    import android.widget.Button
     import android.widget.ImageView
     import androidx.appcompat.app.AppCompatActivity
 
@@ -11,17 +12,24 @@ package com.example.househuntingkt
             super.onCreate(savedInstanceState)
             setContentView(R.layout.nerul)
 
+            val backbutton  = findViewById<ImageView>(R.id.backArrow)
+            backbutton.setOnClickListener {
+                val intent = Intent(this, DashboardActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+
             // Find ImageViews by ID
-//            val propertyImage1 = findViewById<ImageView>(R.id.nerulimg1)
+            val propertyImage1 = findViewById<ImageView>(R.id.nerulimg1)
 //            val propertyImage2 = findViewById<ImageView>(R.id.nerulimg2)
 //            val propertyImage3 = findViewById<ImageView>(R.id.nerulim3)
 //            val propertyImage4 = findViewById<ImageView>(R.id.property_image4)
 
             // Set click listeners for each image
-//            propertyImage1.setOnClickListener {
-//                val intent = Intent(this, Nerul1::class.java)
-//                startActivity(intent)
-//            }
+            propertyImage1.setOnClickListener {
+                val intent = Intent(this, Nerul1::class.java)
+                startActivity(intent)
+            }
 //
 //            propertyImage2.setOnClickListener {
 //                val intent = Intent(this, Nerul1::class.java)
