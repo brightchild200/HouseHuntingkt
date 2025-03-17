@@ -26,7 +26,6 @@ class RegisterActivity : AppCompatActivity() {
 
         // Back to MainActivity (Home)
 
-
         // Handle Get Started button click
         getStarted.setOnClickListener {
             val tname = name.text.toString().trim()
@@ -49,12 +48,20 @@ class RegisterActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // Delay of 3 seconds (3000ms)
-        Handler(Looper.getMainLooper()).postDelayed({
-            // Redirect to ActivityMain
-            val intent = Intent(this@RegisterActivity, DashboardActivity::class.java)
-            startActivity(intent)
-            finish() // To prevent returning to this activity
-        }, 3000)
+        // Back arrow functionality to go to RegisterActivity
+        getStarted.setOnClickListener {
+            val go = Intent(this, DashboardActivity::class.java)
+            startActivity(go)
+        }
+
+//        // Delay of 3 seconds (3000ms)
+//        Handler(Looper.getMainLooper()).postDelayed({
+//            // Redirect to ActivityMain
+//            val intent = Intent(this@RegisterActivity, DashboardActivity::class.java)
+//            startActivity(intent)
+//            finish() // To prevent returning to this activity
+//        }, 5000)
+
+
     }
 }

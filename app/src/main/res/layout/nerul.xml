@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#f5f5dc"
+    android:layout_height="match_parent">
+
+
+
+    <ImageView
+        android:id="@+id/backArrow"
+        android:layout_width="75dp"
+        android:layout_height="61dp"
+        android:clickable="true"
+        android:contentDescription="Back"
+        android:focusable="true"
+        android:padding="16dp"
+        app:srcCompat="@drawable/arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="277dp"
+        android:layout_height="75dp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollnerul"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/backArrow"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/wobg" />
+
+    <ScrollView
+        android:id="@+id/scrollnerul"
+        android:layout_width="0dp"
+        android:layout_height="640dp"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <!-- First CardView Section -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/firstn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/nerulimg1"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/pg8" />
+
+                    <TextView
+                        android:id="@+id/nerulname1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:fontFamily="@font/crossiantone_regular"
+                        android:text="Om Sai Apartment"
+                        android:textColor="#454545"
+                        android:textSize="21sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/nerullocation1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/zillaslab_semibolditalic"
+                        android:text="Near SIES College, Nerul, Navi Mumbai"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/nerul_de1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="90dp"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/zillaslab_semibolditalic"
+                        android:text="Our PG Basis is available in the same flat In one flat family as well as separately staying girls on another side with a Separate toilet Bathroom, Cot, Bed Cupboard, Kitchen events available TV."
+                        android:textSize="16dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:gravity="end"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/email_btn1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:backgroundTint="@color/material_dynamic_neutral_variant20"
+                            android:text="Email"
+                            android:textSize="20dp" />
+
+                        <Button
+                            android:id="@+id/whatsapp_btn1"
+                            android:layout_width="156dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="100dp"
+                            android:backgroundTint="@color/material_dynamic_neutral_variant20"
+                            android:text="WhatsApp"
+                            android:textSize="20dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Repeat for additional card sections -->
+            <!-- Second CardView Section -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/secondn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/nerulimg2"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/pg7" />
+
+                    <TextView
+                        android:id="@+id/nerul_name2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:fontFamily="@font/crossiantone_regular"
+                        android:text="Girl's hostel"
+                        android:textColor="#454545"
+                        android:textSize="21sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/nerul_location2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/zillaslab_semibolditalic"
+                        android:text="Near Terna college, Nerul"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/nerul_de2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/zillaslab_semibolditalic"
+                        android:text="Move into Rashi, a professionally managed PG home in Karanjade, navi mumbai. Located in a safe neighborhood, this female PG offers various modern amenities for your comfort, such as Power Backup, TV, etc. This PG has Double Occupancy types. This PG is nearby major commercial and educational hubs. Please contact the seller to book this fast selling high in demand PG stay."
+                        android:textSize="16dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:gravity="end"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/email_btn2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/material_dynamic_neutral_variant20"
+                            android:text="Email"
+                            android:textSize="20dp" />
+
+                        <Button
+                            android:id="@+id/whatsapp_btn2"
+                            android:layout_width="156dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="100dp"
+                            android:backgroundTint="@color/material_dynamic_neutral_variant20"
+                            android:text="WhatsApp"
+                            android:textSize="20dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

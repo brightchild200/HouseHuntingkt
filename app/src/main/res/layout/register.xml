@@ -1,8 +1,8 @@
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#d9d9d9"
+    android:background="#f5f5dc"
     android:layout_height="match_parent"
     tools:context=".RegisterActivity">
 
@@ -31,13 +31,17 @@
         android:layout_width="328dp"
         android:layout_height="60dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#545454"
+        android:backgroundTintMode="screen"
         android:hint="Name"
         android:inputType="textPersonName"
         android:padding="10dp"
+        android:textColorHint="#545454"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.417"
+        app:layout_constraintHorizontal_bias="0.402"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="131dp" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
     <EditText
         android:id="@+id/phone"
@@ -46,6 +50,9 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
+        android:textColorHint="#545454"
+        android:backgroundTint="#545454"
+        android:backgroundTintMode="screen"
         android:hint="Mobile Number"
         android:inputType="phone"
         android:padding="10dp"
@@ -60,6 +67,9 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="16dp"
+        android:textColorHint="#545454"
+        android:backgroundTint="#545454"
+        android:backgroundTintMode="screen"
         android:hint="Email Address"
         android:inputType="textEmailAddress"
         android:padding="10dp"
@@ -74,6 +84,9 @@
         android:layout_height="63dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="36dp"
+        android:textColorHint="#545454"
+        android:backgroundTint="#545454"
+        android:backgroundTintMode="screen"
         android:layout_marginEnd="16dp"
         android:hint="Password"
         android:inputType="textPassword"
@@ -85,28 +98,33 @@
 
     <Button
         android:id="@+id/getStarted"
-        android:layout_width="147dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="60dp"
+        style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+        android:layout_width="200dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="48dp"
+        android:backgroundTint="#008080"
         android:padding="15dp"
         android:text="Get Started"
+        android:textColor="#E0D56E"
+        android:textSize="21dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/password" />
 
     <TextView
         android:id="@+id/account"
-        android:layout_width="257dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="247dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="24dp"
         android:clickable="true"
         android:focusable="true"
         android:padding="8dp"
         android:text="Already have an account?"
-        android:textColor="#8d8d8d"
+        android:textColor="#545454"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.22"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/getStarted" />
 
@@ -115,25 +133,24 @@
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
         android:text="login"
-        android:textColor="#000000"
+        android:textColor="#008080"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.894"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/getStarted"
+        app:layout_constraintTop_toBottomOf="@+id/account"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="309dp"
-        android:layout_height="114dp"
-        app:layout_constraintBottom_toTopOf="@+id/name"
+        android:layout_width="299dp"
+        android:layout_height="79dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/backArrow"
-        app:srcCompat="@drawable/horilogo" />
+        app:layout_constraintStart_toEndOf="@+id/backArrow"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/horiblogo" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

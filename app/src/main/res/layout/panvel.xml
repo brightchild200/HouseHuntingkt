@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- ScrollView to enable scrolling -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- LinearLayout to hold multiple card sections -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <!-- First CardView Section -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/first"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/property_image1"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/pg1" />
+
+                    <TextView
+                        android:id="@+id/property_name1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:textColor="#454545"
+                        android:textSize="21sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/crossiantone_regular"
+                        android:text="Krishna Vandana PG"
+                        />
+
+                    <TextView
+                        android:id="@+id/property_location1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/zillaslab_semibolditalic"
+                        android:text="Vichumbe, Panvel,Navi Mumbai"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/property_de1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="90dp"
+                        android:textSize="16dp"
+                        android:fontFamily="@font/zillaslab_semibolditalic"
+                        android:layout_marginStart="8dp"
+                        android:text="Our PG Basis is available in the same flat In one flat family as well as separately staying girls on another side with a Separate toilet Bathroom, Cot, Bed Cupboard, Kitchen events available TV." />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:gravity="end"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/email_btn1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:textSize="20dp"
+                            android:backgroundTint="@color/material_dynamic_neutral_variant20"
+                            android:text="Email" />
+
+                        <Button
+                            android:id="@+id/whatsapp_btn1"
+                            android:layout_width="156dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="100dp"
+                            android:backgroundTint="@color/material_dynamic_neutral_variant20"
+                            android:text="WhatsApp"
+                            android:textSize="20dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Repeat for additional card sections -->
+            <!-- Second CardView Section -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/second"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/property_image2"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/pg2" />
+
+                    <TextView
+                        android:id="@+id/property_name2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="Silver Park Residency"
+                        android:textColor="#454545"
+                        android:textSize="21sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/crossiantone_regular"/>
+
+                    <TextView
+                        android:id="@+id/property_location2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/zillaslab_semibolditalic"
+                        android:layout_marginStart="8dp"
+                        android:text="Karanjade, New Panvel" />
+
+                    <TextView
+                        android:id="@+id/property_de2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:textSize="16dp"
+                        android:fontFamily="@font/zillaslab_semibolditalic"
+                        android:layout_marginStart="8dp"
+                        android:text="Move into Rashi, a professionally managed PG home in Karanjade, navi mumbai. Located in a safe neighborhood, this female PG offers various modern amenities for your comfort, such as Power Backup, TV, etc. This PG has Double Occupancy types. This PG is nearby major commercial and educational hubs. Please contact the seller to book this fast selling high in demand PG stay. " />
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:gravity="end"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/email_btn2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:textSize="20dp"
+                            android:backgroundTint="@color/material_dynamic_neutral_variant20"
+                            android:text="Email" />
+
+                        <Button
+                            android:id="@+id/whatsapp_btn2"
+                            android:layout_width="156dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="100dp"
+                            android:backgroundTint="@color/material_dynamic_neutral_variant20"
+                            android:text="WhatsApp"
+                            android:textSize="20dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+<!--            3rd card view -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/third"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/property_image3"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/pg3" />
+
+                    <TextView
+                        android:id="@+id/property_name3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="Arvind PG Panvel"
+                        android:textColor="#454545"
+                        android:textSize="21sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/crossiantone_regular" />
+
+                    <TextView
+                        android:id="@+id/property_location3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/zillaslab_semibolditalic"
+                        android:layout_marginStart="8dp"
+                        android:text="Panvel, Navi Mumbai" />
+
+                    <TextView
+                        android:id="@+id/property_de3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:textSize="16dp"
+                        android:fontFamily="@font/zillaslab_semibolditalic"
+                        android:layout_marginStart="8dp"
+                        android:text="Located in Panvel, Navi Mumbai, Arvind PG Panvel is a Modern and Spacious PG Home that is Close to Major Educational Commercial hubs in the area. This Unisex PG offers all the Comforts like TV, AC, Food, Power Backup, Wi-Fi, etc. The PG has Strict Adherence to hygiene Standards and offers Single, Double, Triple, and Four Rooms. Please contact me in case you are interested or have Queried. Looking Forward to Serving you " />
+
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:gravity="end"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/email_btn3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:textSize="20dp"
+                            android:backgroundTint="@color/material_dynamic_neutral_variant20"
+                            android:text="Email" />
+
+                        <Button
+                            android:id="@+id/whatsapp_btn3"
+                            android:layout_width="156dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="100dp"
+                            android:backgroundTint="@color/material_dynamic_neutral_variant20"
+                            android:text="WhatsApp"
+                            android:textSize="20dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+<!--            4th card view -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fourth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/property_image4"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/pg4" />
+
+                    <TextView
+                        android:id="@+id/property_name4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="Swami PG"
+                        android:textColor="#454545"
+                        android:textSize="21sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/crossiantone_regular" />
+
+                    <TextView
+                        android:id="@+id/property_location4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/zillaslab_semibolditalic"
+                        android:text="New Panvel, Navi Mumbai" />
+
+                    <TextView
+                        android:id="@+id/property_de4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:textSize="16dp"
+                        android:fontFamily="@font/zillaslab_semibolditalic"
+                        android:layout_marginStart="8dp"
+                        android:text="Move into Swami PG, a professionally managed PG home in the New Panvel, Navi Mumbai. Located in a safe neighborhood, this male PG offers various modern amenities for your comfort. This PG has double occupancy types. This PG is nearby major commercial and educational hubs. Please contact the seller to book this fast selling high in demand PG stay.  " />
+
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:gravity="end"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/email_button2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:textSize="20dp"
+                            android:backgroundTint="@color/material_dynamic_neutral_variant20"
+                            android:text="Email" />
+
+                        <Button
+                            android:id="@+id/whatsapp_button2"
+                            android:layout_width="156dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="100dp"
+                            android:backgroundTint="@color/material_dynamic_neutral_variant20"
+                            android:text="WhatsApp"
+                            android:textSize="20dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <!-- You can add more sections similarly -->
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

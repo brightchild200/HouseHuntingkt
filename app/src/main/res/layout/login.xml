@@ -2,7 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#d9d9d9"
+    android:background="#f5f5dc"
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
@@ -29,15 +29,17 @@
         android:layout_width="300dp"
         android:layout_height="77dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
+        android:backgroundTint="#545454"
+        android:backgroundTintMode="screen"
         android:hint="Email Address"
         android:inputType="textEmailAddress"
         android:padding="10dp"
+        android:textColorHint="#545454"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <EditText
         android:id="@+id/password"
@@ -46,6 +48,9 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="52dp"
         android:layout_marginEnd="16dp"
+        android:textColorHint="#545454"
+        android:backgroundTint="#545454"
+        android:backgroundTintMode="screen"
         android:hint="Password"
         android:inputType="textPassword"
         android:padding="10dp"
@@ -56,10 +61,15 @@
 
     <Button
         android:id="@+id/getStarted"
-        android:layout_width="147dp"
-        android:layout_height="53dp"
+        android:layout_width="200dp"
+        android:layout_height="61dp"
         android:layout_marginTop="60dp"
         android:padding="15dp"
+        android:textSize="21dp"
+        android:textStyle="bold"
+        style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+        android:backgroundTint="#008080"
+        android:textColor="#E0D56E"
         android:text="Get Started"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,34 +77,35 @@
 
     <TextView
         android:id="@+id/register"
-        android:layout_width="257dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="92dp"
+        android:layout_width="146dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="48dp"
         android:clickable="true"
         android:focusable="true"
         android:padding="8dp"
-        android:text="New to                               ? "
-        android:textColor="@color/black"
+        android:text="New to"
+        android:textColor="#545454"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintHorizontal_bias="0.566"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/getStarted" />
 
     <Button
         android:id="@+id/reg"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="147dp"
+        android:layout_height="68dp"
         android:text="Register"
-        android:textColor="#000000"
+        android:textColor="#008080"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/getStarted"
-        app:layout_constraintVertical_bias="0.744" />
+        app:layout_constraintVertical_bias="0.703" />
 
     <TextView
         android:id="@+id/textView"
@@ -102,25 +113,25 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/playfairdisplay_italic"
         android:text="House Hunting"
-        android:textColor="@android:color/black"
-        android:textSize="20sp"
+        android:textColor="#0C1844"
+        android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintBottom_toTopOf="@+id/reg"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.569"
+        app:layout_constraintHorizontal_bias="0.524"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/getStarted"
-        app:layout_constraintVertical_bias="0.439" />
+        app:layout_constraintTop_toBottomOf="@+id/register"
+        app:layout_constraintVertical_bias="0.264" />
 
     <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="310dp"
-        android:layout_height="132dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.643"
-        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/imageView3"
+        android:layout_width="228dp"
+        android:layout_height="113dp"
+        android:layout_marginStart="36dp"
+        app:layout_constraintStart_toEndOf="@+id/backArrow"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/horilogo" />
+        app:srcCompat="@drawable/horiblogo" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

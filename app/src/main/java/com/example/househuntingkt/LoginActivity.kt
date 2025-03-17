@@ -53,6 +53,7 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this@LoginActivity, DashboardActivity::class.java)
             startActivity(intent)
             finish() // To prevent returning to this activity
-        }, 3000)
+        }, 5000)
     }
 }
+
