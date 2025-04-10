@@ -20,8 +20,8 @@ class DashboardActivity : AppCompatActivity() {
     private lateinit var vashi: Button // Assuming panvelButton is a Button
     private lateinit var seawoods: Button // Assuming panvelButton is a Button
     private lateinit var nerul: Button // Assuming panvelButton is a Button
-    private lateinit var searchBar: EditText // Assuming searchBar is an EditText
-//    val propertyimage1 = findViewById<ImageView>(R.id.property_image1)
+    private lateinit var searchBar: EditText // Assuming searchBar is an EditText explicit
+//    val propertyimage1 = findViewById<ImageView>(R.id.property_image1)  //implicit
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,6 +41,24 @@ class DashboardActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
+        nerul.setOnClickListener {
+            val intent = Intent(this, Nerul::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        vashi.setOnClickListener {
+            val intent = Intent(this, Vashi::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+//        seawoods.setOnClickListener {
+//            val intent = Intent(this, ::class.java)
+//            startActivity(intent)
+//            finish()
+//        }
 //
         // Initialize the property list with some data
         propertyList = listOf(
@@ -67,7 +85,19 @@ class DashboardActivity : AppCompatActivity() {
                 "Swami PG",
                 "New Panvel, Navi Mumbai",
                 "Move into Swami PG, a professionally managed PG home in the New Panvel, Navi Mumbai. Located in a safe neighborhood, this male PG offers various modern amenities for your comfort. This PG has double occupancy types. This PG is nearby major commercial and educational hubs. Please contact the seller to book this fast selling high in demand PG stay. \n"
-            )
+            ),
+            Property(
+                R.drawable.pg5,
+                "Kathani Housing Society",
+                "Nerul, Navi Mumbai",
+                "Welcome to Kathani Housing Society, a well-maintained residential property located in the heart of Nerul, one of the most sought-after localities in Navi Mumbai. The society offers a blend of comfort, convenience, and community living, making it an ideal choice for families, working professionals, and students. \n"
+            ),
+            Property(
+                R.drawable.pg6,
+                "Kathani Housing Society",
+                "Nerul, Navi Mumbai",
+                "Welcome to Kathani Housing Society, a well-maintained residential property located in the heart of Nerul, one of the most sought-after localities in Navi Mumbai. The society offers a blend of comfort, convenience, and community living, making it an ideal choice for families, working professionals, and students. \n"
+            ),
         )
 
         // Set up the RecyclerView
