@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:background="#f5f5dc"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#d9d9d9"
     tools:context=".MainActivity">
 
 
@@ -13,12 +13,9 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/bingelogo"
+        android:src="@drawable/logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-<!-- android:background="@drawable/house2"
-    android:alpha="0.8"-->
