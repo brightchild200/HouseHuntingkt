@@ -1,18 +1,16 @@
 package com.example.househuntingkt
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 
 data class Property(val imageRes: Int, val name: String, val location: String, val description: String)
 
-class PanvelActivity(private val propertyList: List<Property>) : RecyclerView.Adapter<PanvelActivity.PropertyViewHolder>() {
+class PropertyAdapter(private val propertyList: List<Property>) : RecyclerView.Adapter<PropertyAdapter.PropertyViewHolder>() {
 
     class PropertyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val imageView: ImageView = view.findViewById(R.id.property_image1)

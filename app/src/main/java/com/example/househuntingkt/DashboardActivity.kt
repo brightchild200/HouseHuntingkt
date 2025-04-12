@@ -105,7 +105,7 @@ class DashboardActivity : AppCompatActivity() {
             findViewById(R.id.recyclerView) // This assumes your RecyclerView ID is 'recyclerView' in dashboard.xml
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter =
-            PanvelActivity(propertyList) // Connect the adapter to the RecyclerView
+            PropertyAdapter(propertyList) // Connect the adapter to the RecyclerView
 
         // Search functionality to redirect to PanvelActivity if "Panvel" is searched
         searchBar.addTextChangedListener(object : TextWatcher {

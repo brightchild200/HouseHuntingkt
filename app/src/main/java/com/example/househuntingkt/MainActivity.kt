@@ -31,4 +31,6 @@ class MainActivity : AppCompatActivity() {
             finish() // Finish the current activity
         }, 3000)
     }
+    val db = Firebase.firestore
+
 }
