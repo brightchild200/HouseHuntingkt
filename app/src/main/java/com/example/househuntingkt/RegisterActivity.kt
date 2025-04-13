@@ -23,7 +23,10 @@ class RegisterActivity : AppCompatActivity() {
         val mobile = findViewById<EditText>(R.id.phone)
         val email = findViewById<EditText>(R.id.email)
         val password = findViewById<EditText>(password)
-
+        val male = findViewById<Button>(R.id.male)
+        val female = findViewById<Button>(R.id.female)
+        val buyer = findViewById<Button>(R.id.buyer)
+        val seller = findViewById<Button>(R.id.seller)
         // Back to MainActivity (Home)
 
         // Handle Get Started button click
@@ -52,6 +55,11 @@ class RegisterActivity : AppCompatActivity() {
         getStarted.setOnClickListener {
             val go = Intent(this, DashboardActivity::class.java)
             startActivity(go)
+        }
+
+        buyer.setOnClickListener {
+            val buyerdashboard = Intent(this, BuyerDashboardActivity::class.java)
+            startActivity(buyerdashboard)
         }
 
 //        // Delay of 3 seconds (3000ms)

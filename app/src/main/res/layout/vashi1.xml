@@ -94,6 +94,8 @@
                 android:textSize="18sp" />
 
             <!-- PG Details ConstraintLayout -->
+
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout"
                 android:layout_width="371dp"
@@ -147,6 +149,12 @@
                 android:layout_height="300dp"
                 android:layout_marginTop="16dp"/>
 
+
+<!--            Google map -->
+<!--            <com.google.android.gms.maps.MapView-->
+<!--                android:id="@+id/mapView3"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="300dp" />-->
 
         </LinearLayout>
 

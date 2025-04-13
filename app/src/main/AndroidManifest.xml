@@ -32,13 +32,14 @@
         <activity android:name=".Vashi" />
         <activity android:name=".Vashi1" />
         <activity android:name=".PanvelPg1" />
-        <activity android:name=".PanvelActivity" />
+        <activity android:name=".PropertyAdapter" />
+        <activity android:name=".BuyerDashboardActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".DashboardActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDUsUKiwaZuC0Kg2T-yONMK1jCU-d50MiA" />
+            android:value="AIzaSyBuJ96F4g_49fpkhVfAHC2voy-RMYi6i90" />
 
         <service
             android:name="android.speech.RecognitionService"

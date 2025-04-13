@@ -2,8 +2,9 @@
 <resources>
 <!-- Backgrounds -->
 <color name="background_binge">#f5f5dc</color> <!-- Light neutral bg -->
-<color name="card_background">#FFFFFF</color> <!-- Cards white -->
+<color name="white">#FFFFFF</color> <!-- Cards white -->
 <color name="search_bar_bg">#E0E5EC</color> <!-- Soft grey for search -->
+<color name="black">#000000</color>
 
 <!-- Primary Theme -->
 <color name="primary">#58800F</color> <!-- Green for highlight/buttons -->

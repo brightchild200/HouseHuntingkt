@@ -3,15 +3,12 @@ plugins {
     alias(libs.plugins.kotlin.android)
    // id("com.android.application")
     id("com.google.gms.google-services")
+    //id ("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
 android {
     namespace = "com.example.househuntingkt"
     compileSdk = 34
-    android {
-
-
-    }
 
     defaultConfig {
         applicationId = "com.example.househuntingkt"
@@ -22,10 +19,6 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-
-    defaultConfig {
-
-        }
 
 
     buildTypes {
@@ -61,6 +54,7 @@ dependencies {
     implementation ("com.google.android.gms:play-services-location:21.0.1")
     // Import the Firebase BoM
     implementation(platform("com.google.firebase:firebase-bom:33.12.0"))
+
     // TODO: Add the dependencies for Firebase products you want to use
     // When using the BoM, don't specify versions in Firebase dependencies
     implementation("com.google.firebase:firebase-analytics")

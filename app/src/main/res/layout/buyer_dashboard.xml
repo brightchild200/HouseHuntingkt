@@ -182,7 +182,7 @@
         android:id="@+id/bottomNavBar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@color/card_background"
+        android:background="@color/white"
         android:padding="8dp"
         android:elevation="4dp"
         android:orientation="horizontal"
