@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5dc">
+
+    <!-- Top Bar with Back Arrow and Logo -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <!-- Back Arrow -->
+        <ImageView
+            android:id="@+id/backArrow"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/arrow"
+            android:contentDescription="Back"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="8dp"
+            android:layout_gravity="center_vertical" />
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/horiblogo"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:layout_gravity="center_vertical" />
+    </LinearLayout>
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- Card Form -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="@android:color/white"
+                android:elevation="4dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginHorizontal="4dp">
+
+                <!-- PG Name -->
+                <EditText
+                    android:id="@+id/pg_name"
+                    android:hint="🏡 PG Name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:inputType="text"
+                    android:backgroundTint="#f5f5dc" />
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginBottom="8dp" android:background="#C0C0C0"/>
+
+                <!-- Location -->
+                <EditText
+                    android:id="@+id/pg_location"
+                    android:hint="📍 Location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:inputType="text"
+                    android:backgroundTint="#f5f5dc"/>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginBottom="8dp" android:background="#C0C0C0"/>
+
+                <!-- Price -->
+                <EditText
+                    android:id="@+id/pg_price"
+                    android:hint="💰 Rent Price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:inputType="number"
+                    android:backgroundTint="#f5f5dc"/>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginBottom="8dp" android:background="#C0C0C0"/>
+
+                <!-- Nearby -->
+                <EditText
+                    android:id="@+id/pg_nearby"
+                    android:hint="📌 Nearby Landmarks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:inputType="text"
+                    android:backgroundTint="#f5f5dc"/>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginBottom="8dp" android:background="#C0C0C0"/>
+
+                <!-- Description -->
+                <EditText
+                    android:id="@+id/pg_description"
+                    android:hint="📝 Description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minLines="3"
+                    android:minHeight="48dp"
+                    android:inputType="textMultiLine"
+                    android:backgroundTint="#f5f5dc"/>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginBottom="8dp" android:background="#C0C0C0"/>
+
+                <!-- Occupancy -->
+                <EditText
+                    android:id="@+id/pg_occupancy"
+                    android:hint="🛏️ Occupancy Options"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:inputType="text"
+                    android:backgroundTint="#f5f5dc"/>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginBottom="8dp" android:background="#C0C0C0"/>
+
+                <!-- Amenities -->
+                <EditText
+                    android:id="@+id/pg_amenities"
+                    android:hint="🛠️ Amenities"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minLines="2"
+                    android:minHeight="48dp"
+                    android:inputType="textMultiLine"
+                    android:backgroundTint="#f5f5dc"/>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginBottom="8dp" android:background="#C0C0C0"/>
+
+                <!-- Facilities -->
+                <EditText
+                    android:id="@+id/pg_facilities"
+                    android:hint="📺 Additional Facilities"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minLines="2"
+                    android:minHeight="48dp"
+                    android:inputType="textMultiLine"
+                    android:backgroundTint="#f5f5dc"/>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginBottom="8dp" android:background="#C0C0C0"/>
+
+                <!-- Accessibility -->
+                <EditText
+                    android:id="@+id/pg_accessibility"
+                    android:hint="🚶 Accessibility Info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:inputType="text"
+                    android:backgroundTint="#f5f5dc"/>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginBottom="8dp" android:background="#C0C0C0"/>
+
+                <!-- Contact -->
+                <EditText
+                    android:id="@+id/pg_contact"
+                    android:hint="📞 Contact Number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:inputType="phone"
+                    android:backgroundTint="#f5f5dc"/>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginBottom="8dp" android:background="#C0C0C0"/>
+
+                <!-- Image Upload -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Upload minimum 3 images"
+                    android:textColor="#FF0000"
+                    android:textStyle="bold"
+                    android:layout_marginTop="16dp"/>
+
+                <Button
+                    android:id="@+id/upload_image_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📷 Upload PG Images"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="#FF9800"
+                    android:textColor="@android:color/white"/>
+
+                <!-- Image Preview -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/image_preview_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="8dp"
+                    android:visibility="gone"
+                    android:orientation="horizontal"/>
+            </LinearLayout>
+
+            <!-- Submit Button -->
+            <Button
+                android:id="@+id/rent_pg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit Listing"
+                android:textColor="#ffffff"
+                android:backgroundTint="#6A5ACD"
+                android:layout_marginBottom="16dp"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
