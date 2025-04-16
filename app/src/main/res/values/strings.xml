@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">House Hunting</string>
+    <string name="all_enquiries">All Enquiries</string>
+    <string name="property_name">Cosmopolitan PG in Nerul Navi Mumbai</string>
+    <string name="buyer_name">Buyer Name</string>
+    <string name="looking_for">Looking for 1RK</string>
+    <string name="accept">Accept</string>
+    <string name="reject">Reject</string>
+    <string name="message_description">Send message</string>
+    <string name="call_description">Make call</string>
+    <string name="profile_image_description">Profile picture</string>
 </resources>
