@@ -22,6 +22,7 @@ class DashboardActivity : AppCompatActivity() {
     private lateinit var searchBar: EditText
 
 
+
     // Buyer or Seller bottom nav views (declared optionally)
     private var addPropertyTab: LinearLayout? = null
     private var requestsTab: LinearLayout? = null
