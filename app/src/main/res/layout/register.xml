@@ -196,40 +196,7 @@
             app:layout_constraintTop_toBottomOf="@+id/phone"
             app:layout_constraintVertical_bias="0.0" />
 
-        <TextView
-            android:id="@+id/role"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="56dp"
-            android:layout_marginTop="36dp"
-            android:text=" You are : "
-            android:textSize="20dp"
-            app:layout_constraintBottom_toTopOf="@+id/getStarted"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/password"
-            app:layout_constraintVertical_bias="0.0" />
 
-        <Button
-            android:id="@+id/buyer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
-            android:backgroundTint="#031142"
-            android:text="Buyer"
-            app:layout_constraintStart_toEndOf="@+id/role"
-            app:layout_constraintTop_toBottomOf="@+id/password" />
-
-        <Button
-            android:id="@+id/seller"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="52dp"
-            android:backgroundTint="#945D0C"
-            android:text="Seller"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/password" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

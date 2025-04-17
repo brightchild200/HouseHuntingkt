@@ -10,6 +10,8 @@ material = "1.12.0"
 activity = "1.9.2"
 cardview = "1.0.0"  # Add this for the CardView version
 constraintlayout = "2.1.4"
+firebaseAuth = "23.2.0"
+firebaseStorage = "21.0.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -20,7 +22,9 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
-androidx-cardview = { group = "androidx.cardview", name = "cardview", version.ref = "cardview" }  # Add this line for CardView
+androidx-cardview = { group = "androidx.cardview", name = "cardview", version.ref = "cardview" }
+firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
+firebase-storage = { group = "com.google.firebase", name = "firebase-storage", version.ref = "firebaseStorage" }  # Add this line for CardView
 
 
 
