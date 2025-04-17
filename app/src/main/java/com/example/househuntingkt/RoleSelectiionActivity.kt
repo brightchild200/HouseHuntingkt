@@ -34,7 +34,6 @@ class RoleSelectiionActivity : AppCompatActivity() {
                         val intent = Intent(this, DashboardActivity::class.java)
                         intent.putExtra("role", "buyer") // ✅ Pass the role here!
                         startActivity(intent)
-                        finish()
                     }
             }
         }
@@ -47,7 +46,6 @@ class RoleSelectiionActivity : AppCompatActivity() {
                         val intent = Intent(this, DashboardActivity::class.java)
                         intent.putExtra("role", "seller")
                         startActivity(intent)
-                        finish()
                     }
             }
         }

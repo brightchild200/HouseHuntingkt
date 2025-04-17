@@ -1,26 +1,44 @@
+package com.example.househuntingkt
 
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
-class PropertyAdapter(private val propertyList: List<Property>) : RecyclerView.Adapter<PropertyAdapter.PropertyViewHolder>() {
+class PropertyAdapter(private val propertyList: List<Property>) :
+    RecyclerView.Adapter<PropertyAdapter.PropertyViewHolder>() {
 
-    inner class PropertyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val propertyImage: ImageView = itemView.findViewById(R.id.propertyImage)
-        val propertyTitle: TextView = itemView.findViewById(R.id.propertyTitle)
-        val propertyLocation: TextView = itemView.findViewById(R.id.propertyLocation)
-        val propertyDescription: TextView = itemView.findViewById(R.id.propertyDescription)
+    class PropertyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val imageView: ImageView = itemView.findViewById(R.id.property_image1)
+        val nameTextView: TextView = itemView.findViewById(R.id.pg_name)
+        val locationTextView: TextView = itemView.findViewById(R.id.pg_location)
+        val descriptionTextView: TextView = itemView.findViewById(R.id.pg_description)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PropertyViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.property_item, parent, false)
-        return PropertyViewHolder(itemView)
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.panvel, parent, false)
+        return PropertyViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: PropertyViewHolder, position: Int) {
-        val currentProperty = propertyList[position]
-        holder.propertyTitle.text = currentProperty.title
-        holder.propertyLocation.text = currentProperty.location
-        holder.propertyDescription.text = currentProperty.description
-        // Set the image using Glide or Picasso if the image URL is stored in Firestore
-        Glide.with(holder.itemView.context).load(currentProperty.imageUrl).into(holder.propertyImage)
+        val property = propertyList[position]
+        holder.nameTextView.text = property.name
+        holder.locationTextView.text = property.location
+        holder.descriptionTextView.text = property.description
+
+        // Load from URL if available, fallback to placeholder
+        if (property.imageUrl.isNotEmpty()) {
+            Glide.with(holder.itemView.context)
+                .load(property.imageUrl)
+                .placeholder(R.drawable.pg1) // your default image
+                .into(holder.imageView)
+        } else {
+            holder.imageView.setImageResource(R.drawable.pg1)
+        }
     }
 
     override fun getItemCount(): Int = propertyList.size

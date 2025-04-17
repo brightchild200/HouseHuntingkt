@@ -4,28 +4,30 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.firestore.FirebaseFirestore
 
 class DashboardActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
-    private lateinit var propertyList: List<Property>
-    private lateinit var backButton: ImageView
+    private lateinit var propertyList: MutableList<Property>
+    private lateinit var searchBar: EditText
+    private lateinit var db: FirebaseFirestore
+
+    // City buttons (optional)
     private lateinit var vashi: Button
     private lateinit var seawoods: Button
     private lateinit var nerul: Button
-    private lateinit var searchBar: EditText
 
-
-
-    // Buyer or Seller bottom nav views (declared optionally)
+    // Nav layout views
     private var addPropertyTab: LinearLayout? = null
-    private var requestsTab: LinearLayout? = null
+    private var enquireTab: LinearLayout? = null
     private var homeTab: LinearLayout? = null
     private var profileTab: LinearLayout? = null
     private var searchTab: LinearLayout? = null
@@ -37,77 +39,66 @@ class DashboardActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dashboard)
 
-        // Role handling
+        db = FirebaseFirestore.getInstance()
+        propertyList = mutableListOf()
+
         val role = intent.getStringExtra("role") ?: "buyer"
         Toast.makeText(this, "Logged in as $role", Toast.LENGTH_SHORT).show()
 
-        // Load appropriate navbar layout
         val navbarContainer = findViewById<FrameLayout>(R.id.navbar_container)
         val inflater = LayoutInflater.from(this)
         val navbarView: View = when (role.lowercase()) {
-            "seller" -> {
-                inflater.inflate(R.layout.seller_navbar, navbarContainer, false)
-            }
-            "buyer" -> {
-                inflater.inflate(R.layout.buyer_navbar, navbarContainer, false)
-            }
-            else -> { inflater.inflate(R.layout.seller_navbar, navbarContainer, false)}
+            "seller" -> inflater.inflate(R.layout.seller_navbar, navbarContainer, false)
+            "buyer" -> inflater.inflate(R.layout.buyer_navbar, navbarContainer, false)
+            else -> inflater.inflate(R.layout.seller_navbar, navbarContainer, false) // fallback default
         }
         navbarContainer.addView(navbarView)
 
-        // Setup navbar buttons after it's added
+
+        // Bottom nav tabs
         homeTab = navbarView.findViewById(R.id.nav_home)
         profileTab = navbarView.findViewById(R.id.nav_profile)
 
         if (role == "seller") {
             addPropertyTab = navbarView.findViewById(R.id.nav_property)
-            requestsTab = navbarView.findViewById(R.id.nav_bookings)
+            enquireTab = navbarView.findViewById(R.id.nav_bookings)
 
-            // Seller-specific listeners
             addPropertyTab?.setOnClickListener {
                 Toast.makeText(this, "Add Property clicked", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, FormActivity::class.java))
             }
-            requestsTab?.setOnClickListener {
+
+            enquireTab?.setOnClickListener {
                 Toast.makeText(this, "View Requests clicked", Toast.LENGTH_SHORT).show()
+                //startActivity(Intent(this, EnquiriesActivity::class.java))
             }
         }
+
         if (role == "buyer") {
             searchTab = navbarView.findViewById(R.id.nav_search)
             bookedTab = navbarView.findViewById(R.id.nav_booked)
             listingTab = navbarView.findViewById(R.id.nav_listings)
             wishlistTab = navbarView.findViewById(R.id.nav_wishlist)
 
-            // Buyer-specific listeners
             searchTab?.setOnClickListener {
                 Toast.makeText(this, "Search clicked", Toast.LENGTH_SHORT).show()
             }
+
             wishlistTab?.setOnClickListener {
                 Toast.makeText(this, "Wishlist clicked", Toast.LENGTH_SHORT).show()
             }
         }
 
-        // Shared nav listeners
-        homeTab?.setOnClickListener {
-            Toast.makeText(this, "Home clicked", Toast.LENGTH_SHORT).show()
-        }
 
-        profileTab?.setOnClickListener {
-            Toast.makeText(this, "Profile clicked", Toast.LENGTH_SHORT).show()
-        }
+        // RecyclerView setup
+        recyclerView = findViewById(R.id.recyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = PropertyAdapter(propertyList)
 
-        addPropertyTab?.setOnClickListener { startActivity(Intent(this, FormActivity::class.java)) }
-
-        // Header menu button
-//        backButton = findViewById(R.id.menu)
-//        backButton.setOnClickListener {
-//            startActivity(Intent(this, RegisterActivity::class.java))
-//            finish()
-//        }
-
-        // City filters
+        // City buttons (optional)
+        nerul = findViewById(R.id.btnCity1)
         vashi = findViewById(R.id.btnCity2)
         seawoods = findViewById(R.id.btnCity3)
-        nerul = findViewById(R.id.btnCity1)
 
         nerul.setOnClickListener { startActivity(Intent(this, Nerul::class.java)) }
         vashi.setOnClickListener { startActivity(Intent(this, Vashi::class.java)) }
@@ -115,35 +106,138 @@ class DashboardActivity : AppCompatActivity() {
             Toast.makeText(this, "Coming soon!", Toast.LENGTH_SHORT).show()
         }
 
-        // Search bar
+        // SearchBar
         searchBar = findViewById(R.id.searchBar)
         searchBar.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
-                when (s.toString().trim().lowercase()) {
-                    "vashi" -> startActivity(Intent(this@DashboardActivity, Vashi::class.java))
-                    "nerul" -> startActivity(Intent(this@DashboardActivity, Nerul::class.java))
-                    else -> Toast.makeText(this@DashboardActivity, "City not found", Toast.LENGTH_SHORT).show()
+                val query = s.toString().trim()
+                if (query.isNotEmpty()) {
+                    searchFromFirestore(query)
+                } else {
+                    fetchAllProperties()
                 }
             }
+
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
 
-        // Property data
-        propertyList = listOf(
-            Property(R.drawable.pg1, "Krishna Vandana PG", "Vichumbe, Panvel", "Our PG Basis..."),
-            Property(R.drawable.pg2, "Silver Park Residency", "Karanjade", "Move into Rashi..."),
-            Property(R.drawable.pg3, "Arvind PG Panvel", "Panvel", "Located in Panvel..."),
-            Property(R.drawable.pg4, "Swami PG", "New Panvel", "Move into Swami PG..."),
-            Property(R.drawable.pg5, "Kathani Housing Society", "Nerul", "Welcome to Kathani..."),
-            Property(R.drawable.pg6, "Kathani Housing Society", "Nerul", "Welcome to Kathani...")
-        )
+        fetchAllProperties()
+    }
 
-        recyclerView = findViewById(R.id.recyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = PropertyAdapter(propertyList)
+    private fun fetchAllProperties() {
+        db.collection("PGs")
+            .get()
+            .addOnSuccessListener { result ->
+                propertyList.clear()
+                for (document in result) {
+                    val name = document.getString("name") ?: ""
+                    val location = document.getString("location") ?: ""
+                    val price = document.getString("price") ?: ""
+                    val description = document.getString("description") ?: ""
+                    val images = document.get("images") as? ArrayList<String> ?: arrayListOf()
+
+                    propertyList.add(
+                        Property(
+                            R.drawable.pg1.toString(), // placeholder image
+                            name,
+                            location,
+                            description
+                        )
+                    )
+                }
+                recyclerView.adapter?.notifyDataSetChanged()
+            }
+            .addOnFailureListener {
+                Toast.makeText(this, "Failed to fetch listings", Toast.LENGTH_SHORT).show()
+            }
+    }
+
+    private fun searchFromFirestore(searchQuery: String) {
+        db.collection("PGs")
+            .orderBy("location")
+            .startAt(searchQuery)
+            .endAt(searchQuery + "\uf8ff")
+            .get()
+            .addOnSuccessListener { result ->
+                propertyList.clear()
+                for (document in result) {
+                    val name = document.getString("name") ?: ""
+                    val location = document.getString("location") ?: ""
+                    val price = document.getString("price") ?: ""
+                    val description = document.getString("description") ?: ""
+                    val images = document.get("images") as? ArrayList<String> ?: arrayListOf()
+
+                    propertyList.add(
+                        Property(
+                            R.drawable.pg1.toString(),
+                            name,
+                            location,
+                            description
+                        )
+                    )
+                }
+                recyclerView.adapter?.notifyDataSetChanged()
+            }
+            .addOnFailureListener { e ->
+                Log.e("Firestore", "Search error: ", e)
+                Toast.makeText(this, "Search failed", Toast.LENGTH_SHORT).show()
+            }
     }
 }
+
+
+
+// Header menu button
+//        backButton = findViewById(R.id.menu)
+//        backButton.setOnClickListener {
+//            startActivity(Intent(this, RegisterActivity::class.java))
+//            finish()
+//        }
+
+        // City filters
+//        vashi = findViewById(R.id.btnCity2)
+//        seawoods = findViewById(R.id.btnCity3)
+//        nerul = findViewById(R.id.btnCity1)
+//
+//        nerul.setOnClickListener { startActivity(Intent(this, Nerul::class.java)) }
+//        vashi.setOnClickListener { startActivity(Intent(this, Vashi::class.java)) }
+//        seawoods.setOnClickListener {
+//            Toast.makeText(this, "Coming soon!", Toast.LENGTH_SHORT).show()
+//        }
+//
+//        // Search bar
+//        searchBar = findViewById(R.id.searchBar)
+//        searchBar.addTextChangedListener(object : TextWatcher {
+//            override fun afterTextChanged(s: Editable?) {
+//                when (s.toString().trim().lowercase()) {
+//                    "vashi" -> startActivity(Intent(this@DashboardActivity, Vashi::class.java))
+//                    "nerul" -> startActivity(Intent(this@DashboardActivity, Nerul::class.java))
+//                    else -> Toast.makeText(this@DashboardActivity, "City not found", Toast.LENGTH_SHORT).show()
+//                }
+//            }
+//            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+//            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+//        })
+//
+//        // Property data
+//        propertyList = listOf(
+//            Property(R.drawable.pg1, "Krishna Vandana PG", "Vichumbe, Panvel", "Our PG Basis..."),
+//            Property(R.drawable.pg2, "Silver Park Residency", "Karanjade", "Move into Rashi..."),
+//            Property(R.drawable.pg3, "Arvind PG Panvel", "Panvel", "Located in Panvel..."),
+//            Property(R.drawable.pg4, "Swami PG", "New Panvel", "Move into Swami PG..."),
+//            Property(R.drawable.pg5, "Kathani Housing Society", "Nerul", "Welcome to Kathani..."),
+//            Property(R.drawable.pg6, "Kathani Housing Society", "Nerul", "Welcome to Kathani...")
+//        )
+//
+//        recyclerView = findViewById(R.id.recyclerView)
+//        recyclerView.layoutManager = LinearLayoutManager(this)
+//        recyclerView.adapter = PropertyAdapter(propertyList)
+//    }
+//}
+
+//upar wala logic
+
 
 //    private fun initBottomNavBar() {
 //        propertyTab.setOnClickListener {
