@@ -13,7 +13,7 @@ class PropertyAdapter(private val propertyList: List<Property>) :
 
     class PropertyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imageView: ImageView = itemView.findViewById(R.id.property_image1)
-        val nameTextView: TextView = itemView.findViewById(R.id.pg_name)
+//        val nameTextView: TextView = itemView.findViewById(R.id.pg_name)
         val locationTextView: TextView = itemView.findViewById(R.id.pg_location)
         val descriptionTextView: TextView = itemView.findViewById(R.id.pg_description)
     }
@@ -26,7 +26,7 @@ class PropertyAdapter(private val propertyList: List<Property>) :
 
     override fun onBindViewHolder(holder: PropertyViewHolder, position: Int) {
         val property = propertyList[position]
-        holder.nameTextView.text = property.name
+//        holder.nameTextView.text = property.name
         holder.locationTextView.text = property.location
         holder.descriptionTextView.text = property.description
 
