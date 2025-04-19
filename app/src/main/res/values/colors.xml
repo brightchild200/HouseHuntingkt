@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+<!-- Backgrounds -->
+<color name="background_binge">#f5f5dc</color> <!-- Light neutral bg -->
+<color name="white">#FFFFFF</color> <!-- Cards white -->
+<color name="search_bar_bg">#E0E5EC</color> <!-- Soft grey for search -->
+<color name="black">#000000</color>
+
+<!-- Primary Theme -->
+<color name="primary">#58800F</color> <!-- Green for highlight/buttons -->
+<color name="primary_dark">#388E3C</color> <!-- Darker green -->
+<color name="accent">#FF5722</color> <!-- Orange (secondary accent) -->
+
+<!-- Text Colors -->
+<color name="text_primary">#212121</color> <!-- Main text -->
+<color name="text_secondary">#757575</color> <!-- Subtext -->
+<color name="text_light">#FFFFFF</color> <!-- On colored backgrounds -->
+
+<!-- Buttons -->
+<color name="button_email">#2196F3</color> <!-- Blue for email -->
+<color name="button_whatsapp">#25D366</color> <!-- WhatsApp green -->
+
+<!-- Borders / Dividers -->
+<color name="border_color">#BDBDBD</color> <!-- Light gray border -->
 </resources>

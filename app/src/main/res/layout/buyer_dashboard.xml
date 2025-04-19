@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_binge"
+    tools:context=".DashboardActivity">
+
+    <!-- Menu ImageView -->
+
+    <!-- Search Bar CardView -->
+
+    <ImageView
+        android:id="@+id/menu"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="16dp"
+        android:src="@drawable/menu"
+        app:layout_constraintBottom_toTopOf="@+id/head"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/searchBarCard"
+        android:layout_width="383dp"
+        android:layout_height="110dp"
+        android:layout_margin="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/head">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/search_bar_bg"
+            android:backgroundTintMode="screen">
+
+            <!-- Search Layout -->
+            <LinearLayout
+                android:id="@+id/searchLayout"
+                android:layout_width="370dp"
+                android:layout_height="52dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <!-- Search Bar EditText -->
+                <EditText
+                    android:id="@+id/searchBar"
+                    android:layout_width="320dp"
+                    android:layout_height="50dp"
+                    android:background="@android:color/transparent"
+                    android:hint="Search by city, area or locality"
+                    android:padding="12dp"
+                    android:textColorHint="@color/primary"
+                    android:textStyle="bold" />
+
+                <!-- Search Logo ImageView -->
+                <ImageView
+                    android:id="@+id/searchlogo"
+                    android:layout_width="58dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="2dp"
+                    android:src="@drawable/search" />
+            </LinearLayout>
+
+            <!-- Cities Layout -->
+            <LinearLayout
+                android:id="@+id/citiesLayout"
+                android:layout_width="368dp"
+                android:layout_height="69dp"
+                android:layout_margin="8dp"
+                android:gravity="end"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/searchLayout">
+
+                <Button
+                    android:id="@+id/btnCity1"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/shirkhand"
+                    android:text="Nerul"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnCity2"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/shirkhand"
+                    android:text="Vashi"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnCity3"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/shirkhand"
+                    android:text="Seawoods"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Top Trending TextView -->
+
+    <!-- Header TextView -->
+
+    <!-- RecyclerView -->
+
+    <TextView
+        android:id="@+id/topTrending"
+        android:layout_width="222dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/kurale_regular"
+        android:text="Top Trending"
+        android:textColor="@color/text_primary"
+        android:textSize="35dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.539"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchBarCard" />
+
+    <TextView
+        android:id="@+id/head"
+        android:layout_width="385dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/zillaslab_bolditalic"
+        android:text="Where would you like to hunt for a house?"
+        android:textColor="#0C1844"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menu" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topTrending"
+        app:layout_constraintVertical_bias="0.131"
+        tools:listitem="@layout/panvel" />
+
+    <!-- Bottom Navigation Bar -->
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="277dp"
+        android:layout_height="75dp"
+        android:src="@drawable/wobg"
+        app:layout_constraintBottom_toTopOf="@+id/searchBarCard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.137"
+        app:layout_constraintStart_toEndOf="@+id/menu"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <LinearLayout
+        android:id="@+id/bottomNavBar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        android:padding="8dp"
+        android:elevation="4dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/nav_search"
+                android:layout_width="35dp"
+                android:layout_height="30dp"
+                android:src="@drawable/search" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Search"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/nav_wishlist"
+                android:layout_width="23dp"
+                android:layout_height="28dp"
+                android:src="@drawable/heartfill" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Wishlist"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/nav_home"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/home" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/nav_booked"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/booked" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Booking"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/nav_profile"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/profile" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profile"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,7 +15,7 @@
         android:clickable="true"
         android:focusable="true"
         android:padding="16dp"
-        android:src="@drawable/list"
+        android:src="@drawable/menu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -118,16 +118,19 @@
     <!-- Top Trending TextView -->
     <TextView
         android:id="@+id/topTrending"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_width="222dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/kurale_regular"
         android:text="Top Trending"
-        android:textSize="18sp"
+        android:textColor="@color/text_primary"
+        android:textSize="35dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.539"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchBarCard"
-        app:layout_constraintHorizontal_bias="0.498" />
+        app:layout_constraintTop_toBottomOf="@+id/searchBarCard" />
+
 
     <!-- Header TextView -->
     <TextView
@@ -158,7 +161,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topTrending"
         app:layout_constraintVertical_bias="0.131"
-        tools:listitem="@layout/panvel" />
+        tools:listitem="@layout/property_item" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -171,5 +174,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.141"
         android:src="@drawable/wobg" />
+
+    <FrameLayout
+        android:id="@+id/navbar_container"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        android:padding="8dp"
+        android:elevation="4dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

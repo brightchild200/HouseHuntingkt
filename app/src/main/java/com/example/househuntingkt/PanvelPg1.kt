@@ -17,7 +17,7 @@ class PanvelPg1 : AppCompatActivity() {
         val callButton: Button = findViewById(R.id.call)
         callButton.setOnClickListener {
             val intent = Intent(Intent.ACTION_DIAL)
-            intent.data = Uri.parse("tel:9XXXXXXXXX") // Replace with the actual phone number
+            intent.data = Uri.parse("tel:7774521039") // Replace with the actual phone number
             startActivity(intent)
         }
 

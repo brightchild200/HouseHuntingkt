@@ -72,7 +72,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
                         android:fontFamily="@font/crossiantone_regular"
-                        android:text="Om Sai Apartment"
+                        android:text="Kathani PG Residency"
                         android:textColor="#454545"
                         android:textSize="21sp"
                         android:textStyle="bold" />
@@ -82,8 +82,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="36dp"
                         android:layout_marginStart="8dp"
-                        android:fontFamily="@font/zillaslab_semibolditalic"
-                        android:text="Near SIES College, Nerul, Navi Mumbai"
+                        android:fontFamily="@font/zillaslab_semibold"
+                        android:text="📍Sector 8, Nerul, Navi Mumbai"
                         android:textSize="20dp" />
 
                     <TextView
@@ -92,7 +92,7 @@
                         android:layout_height="90dp"
                         android:layout_marginStart="8dp"
                         android:fontFamily="@font/zillaslab_semibolditalic"
-                        android:text="Our PG Basis is available in the same flat In one flat family as well as separately staying girls on another side with a Separate toilet Bathroom, Cot, Bed Cupboard, Kitchen events available TV."
+                        android:text="Welcome to Kathani Housing Society, a well-maintained residential property located in the heart of Nerul, one of the most sought-after localities in Navi Mumbai. The society offers a blend of comfort, convenience, and community living, making it an ideal choice for families, working professionals, and students."
                         android:textSize="16dp" />
 
                     <LinearLayout

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "448742168303",
+    "project_id": "househuntingkt-5b80badb",
+    "storage_bucket": "househuntingkt-5b80badb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:448742168303:android:309ba6bd4466c0c9a9ad1a",
+        "android_client_info": {
+          "package_name": "com.example.househuntingkt"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5jofzfoDqA-A1pdyiVlX7yPrQBGcAzF8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

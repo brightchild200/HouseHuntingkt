@@ -24,139 +24,164 @@
         android:id="@+id/imageView"
         android:layout_width="277dp"
         android:layout_height="75dp"
-        app:layout_constraintBottom_toTopOf="@+id/searchBarCard"
+        app:layout_constraintBottom_toTopOf="@+id/scrollvashi1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/backArrow"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/wobg" />
 
-    <!-- CardView with image -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/searchBarCard"
-        android:layout_width="371dp"
-        android:layout_height="194dp"
-        app:layout_constraintTop_toBottomOf="@id/imageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+    <!-- ScrollView -->
+    <ScrollView
+        android:id="@+id/scrollvashi1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintBottom_toTopOf="@+id/buttonLayout">
 
-        <ImageView
-            android:id="@+id/imageView4"
+        <!-- Wrap content inside a LinearLayout -->
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:srcCompat="@drawable/pg8"
-            tools:ignore="ContentDescription" />
-    </androidx.cardview.widget.CardView>
-
-    <!-- Rent Details -->
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Rs. 15000 / Month"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/searchBarCard"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Om Sai Apartment, Nerul, Navi Mumbai"
-        android:fontFamily="@font/crossiantone_regular"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="375dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="Our PG Basis is available in the same flat In one flat family as well as separately staying girls on another side with a Separate toilet Bathroom, Cot, Bed Cupboard, Kitchen events available TV."
-        android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-    <!-- PG Details ConstraintLayout -->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="371dp"
-        android:layout_height="180dp"
-        android:layout_marginTop="11dp"
-        android:background="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/call"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7">
-
-        <!-- PG Details Title -->
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:text="PG Details"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:orientation="vertical"
+            android:padding="18dp">
 
-        <!-- PG Information -->
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:text="Covered Area: 300 sqft\nLocation: Nerul, Navi Mumbai\nConfiguration: 1 Bed, 1 Bath"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+            <!-- CardView with image -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/searchBarCard"
+                android:layout_width="371dp"
+                android:layout_height="194dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:layout_gravity="center_horizontal">
 
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:text="Prime location near SIES College"
-            android:textSize="22sp"
-            android:textColor="@color/material_dynamic_tertiary10"
-            android:fontFamily="@font/zillaslab_lightitalic"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView9" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/pg8"
+                    tools:ignore="ContentDescription" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- Rent Details -->
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rs. 15000 / Month"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/crossiantone_regular"
+                android:text="Kathani PG Residency, Nerul, Navi Mumbai \n 📍Near SIES and DY Patil University."
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/zillaslab_semibolditalic"
+                android:layout_marginTop="8dp"
+                android:text="Welcome to Kathani Housing Society, a well-maintained residential property located in the heart of Nerul, one of the most sought-after localities in Navi Mumbai. The society offers a blend of comfort, convenience, and community living, making it an ideal choice for families, working professionals, and students."
+                android:textSize="19dp" />
+
+            <!-- PG Details ConstraintLayout -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/constraintLayout"
+                android:layout_width="371dp"
+                android:layout_height="280dp"
+                android:layout_marginTop="11dp"
+                android:layout_gravity="center_horizontal"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="4dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white">
+
+                    <!-- PG Details Title -->
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:text="PG Details"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <!-- PG Information -->
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:textColor="@color/black"
+
+                        android:text="🛏️ Occupancy: Single, Double, and Triple sharing available.\n🍽️ Amenities: Free Wi-Fi, 24/7 water supply, power backup, kitchen access, and home-cooked food services."
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+                    <TextView
+                        android:id="@+id/textView11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:textColor="@color/black"
+
+                        android:text="📺 Additional Facilities: TV, attached bathroom, and common study area\n🚶 Accessibility: Walking distance to the Nerul Railway Station and nearby markets."
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+<!--            <FrameLayout-->
+<!--                android:id="@+id/mapContainer"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="300dp"-->
+<!--                android:layout_marginTop="16dp"/>-->
+
+        </LinearLayout>
+    </ScrollView>
 
     <!-- Buttons for Contact and Rent -->
-
-    <Button
-        android:id="@+id/call"
-        android:layout_width="145dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="36dp"
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:layout_marginTop="16dp"
-        android:text="Contact Owner"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+        android:gravity="center_horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-    <Button
-        android:id="@+id/rent"
-        android:layout_width="155dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="36dp"
-        android:text="Rent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+        <!-- Call Button -->
+        <Button
+            android:id="@+id/call"
+            android:layout_width="145dp"
+            android:layout_height="49dp"
+            android:text="Contact Owner" />
 
+        <!-- Rent Button -->
+        <Button
+            android:id="@+id/rent"
+            android:layout_width="155dp"
+            android:layout_height="49dp"
+            android:layout_marginStart="16dp"
+            android:text="Rent" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
