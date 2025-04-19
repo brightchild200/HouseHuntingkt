@@ -5,7 +5,10 @@ data class Property(
     val title: String,
     val location: String,
     val description: String,
-    val price: String // ← Yeh line add karo
+    val price: String, // ← Yeh line add karo
+    val email: String,
+    val mobile: String,
+    val sellerId: String = ""   // 🟢 Yeh new field add karo
 )
 
 

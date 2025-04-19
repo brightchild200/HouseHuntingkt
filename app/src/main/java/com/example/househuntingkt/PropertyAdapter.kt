@@ -18,6 +18,9 @@ class PropertyAdapter(private val propertyList: List<Property>) :
         val location: TextView = itemView.findViewById(R.id.propertyLocation)
         val price: TextView = itemView.findViewById(R.id.propertyPrice)
         val image: ImageView = itemView.findViewById(R.id.propertyImage)
+        val emailButton: Button = itemView.findViewById(R.id.email_btn)
+        val whatsappButton: Button = itemView.findViewById(R.id.whatsapp_btn)
+//        val deleteBtn: Button = itemView.findViewById(R.id.deleteButton)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PropertyViewHolder {
@@ -31,7 +34,29 @@ class PropertyAdapter(private val propertyList: List<Property>) :
         holder.location.text = property.location
         holder.price.text = "₹${property.price}"
         Glide.with(holder.itemView.context).load(property.imageUrl).into(holder.image)
-    }
+
+//        holder.deleteBtn.setOnClickListener {
+//            deleteFunction(property)
+//        }
+
+            // Email button logic
+            holder.emailButton.setOnClickListener {
+                val intent = android.content.Intent(android.content.Intent.ACTION_SENDTO).apply {
+                    data = android.net.Uri.parse("mailto:${property.email}")
+                }
+                holder.itemView.context.startActivity(intent)
+            }
+
+            // WhatsApp/Dialer button logic
+            holder.whatsappButton.setOnClickListener {
+                val intent = android.content.Intent(android.content.Intent.ACTION_DIAL).apply {
+                    data = android.net.Uri.parse("tel:${property.mobile}")
+                }
+                holder.itemView.context.startActivity(intent)
+            }
+        }
+
+
 
     override fun getItemCount(): Int = propertyList.size
 }

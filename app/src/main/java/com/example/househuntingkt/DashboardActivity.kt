@@ -136,6 +136,8 @@ class DashboardActivity : AppCompatActivity() {
                     val location = document.getString("location") ?: ""
                     val price = document.getString("price") ?: ""
                     val description = document.getString("description") ?: ""
+                    val email = document.getString("email") ?: ""
+                    val mobile = document.getString("whatsapp") ?: ""
 
                     // ✅ Yeh block add karo for image URL
                     val images = document.get("images") as? ArrayList<String> ?: arrayListOf()
@@ -147,7 +149,9 @@ class DashboardActivity : AppCompatActivity() {
                             name,
                             location,
                             description,
-                            price
+                            price,
+                            email,
+                            mobile
                         )
                     )
                 }
@@ -172,6 +176,8 @@ class DashboardActivity : AppCompatActivity() {
                     val location = document.getString("location") ?: ""
                     val price = document.getString("price") ?: ""
                     val description = document.getString("description") ?: ""
+                    val email = document.getString("email") ?: ""
+                    val mobile = document.getString("whatsapp") ?: ""
 
                     val images = document.get("images") as? ArrayList<String> ?: arrayListOf()
                     val imageUrl = if (images.isNotEmpty()) images[0] else ""
@@ -182,7 +188,9 @@ class DashboardActivity : AppCompatActivity() {
                             name,
                             location,
                             description,
-                            price
+                            price,
+                            email,
+                            mobile
                         )
                     )
                 }

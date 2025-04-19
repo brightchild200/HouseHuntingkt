@@ -9,6 +9,7 @@ import com.squareup.picasso.Picasso
 
 class ImagePreviewAdapter(private val imageUris: ArrayList<String>) : RecyclerView.Adapter<ImagePreviewAdapter.ImageViewHolder>() {
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.image_preview_item, parent, false)
         return ImageViewHolder(view)
