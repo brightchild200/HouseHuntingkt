@@ -1,8 +1,10 @@
 package com.example.househuntingkt
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -12,33 +14,23 @@ class PropertyAdapter(private val propertyList: List<Property>) :
     RecyclerView.Adapter<PropertyAdapter.PropertyViewHolder>() {
 
     class PropertyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val imageView: ImageView = itemView.findViewById(R.id.property_image1)
-//        val nameTextView: TextView = itemView.findViewById(R.id.pg_name)
-        val locationTextView: TextView = itemView.findViewById(R.id.pg_location)
-        val descriptionTextView: TextView = itemView.findViewById(R.id.pg_description)
+        val title: TextView = itemView.findViewById(R.id.propertyTitle)
+        val location: TextView = itemView.findViewById(R.id.propertyLocation)
+        val price: TextView = itemView.findViewById(R.id.propertyPrice)
+        val image: ImageView = itemView.findViewById(R.id.propertyImage)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PropertyViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.panvel, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.property_item, parent, false)
         return PropertyViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: PropertyViewHolder, position: Int) {
         val property = propertyList[position]
-//        holder.nameTextView.text = property.name
-        holder.locationTextView.text = property.location
-        holder.descriptionTextView.text = property.description
-
-        // Load from URL if available, fallback to placeholder
-        if (property.imageUrl.isNotEmpty()) {
-            Glide.with(holder.itemView.context)
-                .load(property.imageUrl)
-                .placeholder(R.drawable.pg1) // your default image
-                .into(holder.imageView)
-        } else {
-            holder.imageView.setImageResource(R.drawable.pg1)
-        }
+        holder.title.text = property.title
+        holder.location.text = property.location
+        holder.price.text = "₹${property.price}"
+        Glide.with(holder.itemView.context).load(property.imageUrl).into(holder.image)
     }
 
     override fun getItemCount(): Int = propertyList.size

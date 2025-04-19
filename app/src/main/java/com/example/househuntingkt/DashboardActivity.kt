@@ -62,6 +62,7 @@ class DashboardActivity : AppCompatActivity() {
         if (role == "seller") {
             addPropertyTab = navbarView.findViewById(R.id.nav_property)
             enquireTab = navbarView.findViewById(R.id.nav_bookings)
+            listingTab = navbarView.findViewById(R.id.nav_listings)
 
             addPropertyTab?.setOnClickListener {
                 Toast.makeText(this, "Add Property clicked", Toast.LENGTH_SHORT).show()
@@ -77,7 +78,7 @@ class DashboardActivity : AppCompatActivity() {
         if (role == "buyer") {
             searchTab = navbarView.findViewById(R.id.nav_search)
             bookedTab = navbarView.findViewById(R.id.nav_booked)
-            listingTab = navbarView.findViewById(R.id.nav_listings)
+
             wishlistTab = navbarView.findViewById(R.id.nav_wishlist)
 
             searchTab?.setOnClickListener {
@@ -135,14 +136,18 @@ class DashboardActivity : AppCompatActivity() {
                     val location = document.getString("location") ?: ""
                     val price = document.getString("price") ?: ""
                     val description = document.getString("description") ?: ""
+
+                    // ✅ Yeh block add karo for image URL
                     val images = document.get("images") as? ArrayList<String> ?: arrayListOf()
+                    val imageUrl = if (images.isNotEmpty()) images[0] else ""
 
                     propertyList.add(
                         Property(
-                            R.drawable.pg1.toString(), // placeholder image
+                            imageUrl,     // ← This is now dynamic
                             name,
                             location,
-                            description
+                            description,
+                            price
                         )
                     )
                 }
@@ -152,6 +157,7 @@ class DashboardActivity : AppCompatActivity() {
                 Toast.makeText(this, "Failed to fetch listings", Toast.LENGTH_SHORT).show()
             }
     }
+
 
     private fun searchFromFirestore(searchQuery: String) {
         db.collection("PGs")
@@ -166,14 +172,17 @@ class DashboardActivity : AppCompatActivity() {
                     val location = document.getString("location") ?: ""
                     val price = document.getString("price") ?: ""
                     val description = document.getString("description") ?: ""
+
                     val images = document.get("images") as? ArrayList<String> ?: arrayListOf()
+                    val imageUrl = if (images.isNotEmpty()) images[0] else ""
 
                     propertyList.add(
                         Property(
-                            R.drawable.pg1.toString(),
+                            imageUrl,
                             name,
                             location,
-                            description
+                            description,
+                            price
                         )
                     )
                 }
@@ -184,6 +193,7 @@ class DashboardActivity : AppCompatActivity() {
                 Toast.makeText(this, "Search failed", Toast.LENGTH_SHORT).show()
             }
     }
+
 }
 
 

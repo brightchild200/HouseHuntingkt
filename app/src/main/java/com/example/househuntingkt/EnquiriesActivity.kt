@@ -17,16 +17,20 @@ class EnquiriesActivity : AppCompatActivity() {
 
     private lateinit var linearLayout: LinearLayout
     private val db = FirebaseFirestore.getInstance()
+    private lateinit var backButton: ImageView // Assuming backButton is an ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.seller_enquiries)
+
+//        backButton = findViewById(R.id.list) // Back button ID should match your layout
 
         linearLayout = findViewById(R.id.enquire)
         // Find the LinearLayout where cards will be added
 
         fetchBuyersFromFirestore()
     }
+
 
     private fun fetchBuyersFromFirestore() {
         db.collection("users")
