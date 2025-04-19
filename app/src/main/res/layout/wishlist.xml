@@ -4,34 +4,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <!-- Top Header -->
-    <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:padding="8dp">
-
-        <ImageView
-            android:id="@+id/backArrow"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_gravity="center_vertical"
-            android:clickable="true"
-            android:contentDescription="Back"
-            android:focusable="true"
-            android:padding="8dp"
-            android:src="@drawable/arrow" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_margin="8dp"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:src="@drawable/horiblogo" />
-    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -59,9 +33,7 @@
                         android:id="@+id/houseImage1"
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
-                        android:contentDescription="House Image 1"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/img" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -82,8 +54,6 @@
                         android:text="Status: Available in 1 month"
                         android:textColor="#008000"/>
 
-                    <!-- Call & Text Buttons -->
-                    <!-- [unchanged] -->
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -103,9 +73,7 @@
                         android:id="@+id/houseImage2"
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
-                        android:contentDescription="House Image 2"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/img2" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -126,8 +94,6 @@
                         android:text="Status: Available in 2 months"
                         android:textColor="#008000"/>
 
-                    <!-- Call & Text Buttons -->
-                    <!-- [unchanged] -->
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -147,9 +113,7 @@
                         android:id="@+id/houseImage3"
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
-                        android:contentDescription="House Image 3"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/img" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -170,8 +134,6 @@
                         android:text="Status: Available in 3 months"
                         android:textColor="#008000"/>
 
-                    <!-- Call & Text Buttons -->
-                    <!-- [unchanged] -->
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -191,9 +153,7 @@
                         android:id="@+id/houseImage4"
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
-                        android:contentDescription="House Image 4"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/img2" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -214,8 +174,6 @@
                         android:text="Status: Available in 1 month"
                         android:textColor="#008000"/>
 
-                    <!-- Call & Text Buttons -->
-                    <!-- [unchanged] -->
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

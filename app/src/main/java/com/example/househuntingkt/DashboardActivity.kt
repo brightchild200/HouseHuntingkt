@@ -71,7 +71,7 @@ class DashboardActivity : AppCompatActivity() {
 
             enquireTab?.setOnClickListener {
                 Toast.makeText(this, "View Requests clicked", Toast.LENGTH_SHORT).show()
-                //startActivity(Intent(this, EnquiriesActivity::class.java))
+                startActivity(Intent(this, EnquiriesActivity::class.java))
             }
         }
 
