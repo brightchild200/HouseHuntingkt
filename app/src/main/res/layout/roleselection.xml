@@ -38,7 +38,7 @@
         android:fontFamily="@font/zillaslab_bolditalic"
         android:text="You are ???"
         android:textColor="#0C1844"
-        android:textSize="50dp"
+        android:textSize="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo" />

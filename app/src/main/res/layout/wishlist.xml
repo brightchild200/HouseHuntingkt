@@ -1,12 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#F5F5DC">
 
+    <!-- Header: Back arrow and Logo -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/backArrow"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/arrow"
+            android:contentDescription="Back"
+            android:padding="8dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/wobg"
+            android:contentDescription="Logo"
+            android:adjustViewBounds="true" />
+    </RelativeLayout>
+
+    <!-- Scrollable Card List -->
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -14,7 +46,7 @@
             android:orientation="vertical"
             android:padding="8dp">
 
-            <!-- First CardView -->
+            <!-- Card 1 -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -30,12 +62,13 @@
                         android:id="@+id/houseImage1"
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
-                        android:scaleType="centerCrop" />
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img2" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nerl, Navi Mumbai"
+                        android:text="Nerul, Navi Mumbai"
                         android:textColor="#000000"
                         android:layout_marginTop="8dp" />
 
@@ -50,11 +83,10 @@
                         android:layout_height="wrap_content"
                         android:text="Status: Available in 1 month"
                         android:textColor="#008000" />
-
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Second CardView -->
+            <!-- Card 2 -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -70,7 +102,8 @@
                         android:id="@+id/houseImage2"
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
-                        android:scaleType="centerCrop" />
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -90,11 +123,10 @@
                         android:layout_height="wrap_content"
                         android:text="Status: Available in 2 months"
                         android:textColor="#008000" />
-
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Third CardView -->
+            <!-- Card 3 -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -110,7 +142,8 @@
                         android:id="@+id/houseImage3"
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
-                        android:scaleType="centerCrop" />
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img2" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -130,11 +163,10 @@
                         android:layout_height="wrap_content"
                         android:text="Status: Available in 3 months"
                         android:textColor="#008000" />
-
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Fourth CardView -->
+            <!-- Card 4 -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -150,7 +182,8 @@
                         android:id="@+id/houseImage4"
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
-                        android:scaleType="centerCrop" />
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -170,7 +203,6 @@
                         android:layout_height="wrap_content"
                         android:text="Status: Available in 1 month"
                         android:textColor="#008000" />
-
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
