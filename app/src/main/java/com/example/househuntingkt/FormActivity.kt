@@ -1,6 +1,7 @@
 package com.example.househuntingkt
 
 import android.app.Activity
+import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -8,6 +9,7 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import okhttp3.*
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -35,12 +37,25 @@ class FormActivity : AppCompatActivity() {
     private lateinit var imagePreviewList: RecyclerView
     private lateinit var submitButton: Button
     private lateinit var imagePreviewAdapter: ImagePreviewAdapter
+    val backArrow = findViewById<ImageView>(R.id.backArrow)
+    val sellerId = FirebaseAuth.getInstance().currentUser?.uid ?: ""
+
 
     private var imageUris: ArrayList<String> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.pgform)
+
+        backArrow.setOnClickListener {
+            finish()  // just closes FormActivity and goes back to DashboardActivity
+        }
+
+
+//        backArrow.setOnClickListener {
+//            val intent = Intent(this, DashboardActivity::class.java)
+//            startActivity(intent)
+//        }
 
         pgName = findViewById(R.id.pg_name)
         pgLocation = findViewById(R.id.pg_location)
@@ -71,6 +86,7 @@ class FormActivity : AppCompatActivity() {
             submitForm()
         }
     }
+
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -107,11 +123,20 @@ class FormActivity : AppCompatActivity() {
 //            return
 //        }
 
-
-        if (name.isEmpty() || location.isEmpty() || price.isEmpty() || imageUris.isEmpty()) {
-            Toast.makeText(this, "Please fill all required fields and select images", Toast.LENGTH_SHORT).show()
+        if (name.isEmpty() || location.isEmpty() || price.isEmpty() || imageUris.isEmpty() || !isValidPrice(price)) {
+            Toast.makeText(this, "Please fill all required fields and select valid images", Toast.LENGTH_SHORT).show()
             return
         }
+
+        // Show progress dialog
+        val progressDialog = ProgressDialog(this)
+        progressDialog.setMessage("Uploading images...")
+        progressDialog.show()
+
+//        if (name.isEmpty() || location.isEmpty() || price.isEmpty() || imageUris.isEmpty()) {
+//            Toast.makeText(this, "Please fill all required fields and select images", Toast.LENGTH_SHORT).show()
+//            return
+//        }
 
         val imageUrls = ArrayList<String>()
         for (uri in imageUris) {
@@ -123,6 +148,11 @@ class FormActivity : AppCompatActivity() {
             }
         }
     }
+
+    fun isValidPrice(price: String): Boolean {
+        return price.toDoubleOrNull() != null
+    }
+
 
     private fun uploadImageToImgBB(imageUri: String, callback: (String) -> Unit) {
         val client = OkHttpClient()
@@ -143,6 +173,9 @@ class FormActivity : AppCompatActivity() {
         client.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
                 e.printStackTrace()
+                runOnUiThread {
+                    Toast.makeText(applicationContext, "Image upload failed. Please try again.", Toast.LENGTH_SHORT).show()
+                }
             }
 
             override fun onResponse(call: Call, response: Response) {
@@ -191,7 +224,8 @@ class FormActivity : AppCompatActivity() {
             "facilities" to facilities,
             "accessibility" to accessibility,
             "contact" to contact,
-            "images" to imageUrls
+            "images" to imageUrls,
+            "sellerId" to sellerId // Add seller ID
         )
 
         firestore.collection("PGs").add(pgData)

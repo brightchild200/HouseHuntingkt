@@ -51,6 +51,7 @@ class RegisterActivity : AppCompatActivity() {
                                     "email" to temail,
                                     "role" to "",  // We will add the role (buyer/seller) after role selection
                                     "gender" to (if (male.isSelected) "Male" else "Female")
+
                                 )
 
                                 db.collection("users").document(userId)
@@ -72,6 +73,18 @@ class RegisterActivity : AppCompatActivity() {
                 Toast.makeText(this, "Please enter email and password", Toast.LENGTH_SHORT).show()
             }
         }
+
+
+        male.setOnClickListener {
+            male.isSelected = true
+            female.isSelected = false
+        }
+
+        female.setOnClickListener {
+            female.isSelected = true
+            male.isSelected = false
+        }
+
 
         // Handle login button click
         login.setOnClickListener {

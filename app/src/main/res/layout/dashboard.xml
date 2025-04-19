@@ -160,8 +160,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topTrending"
-        app:layout_constraintVertical_bias="0.131"
-        tools:listitem="@layout/property_item" />
+        app:layout_constraintVertical_bias="0.131" />
 
     <ImageView
         android:id="@+id/imageView"
