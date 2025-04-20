@@ -74,7 +74,7 @@ class DashboardActivity : AppCompatActivity() {
 
         if (role == "seller") {
             addPropertyTab = navbarView.findViewById(R.id.nav_property)
-            enquireTab = navbarView.findViewById(R.id.nav_enquiries)
+            enquireTab = navbarView.findViewById(R.id.nav_bookings)
             listingTab = navbarView.findViewById(R.id.nav_listings)
 
             addPropertyTab?.setOnClickListener {
@@ -84,7 +84,7 @@ class DashboardActivity : AppCompatActivity() {
 
             enquireTab?.setOnClickListener {
                 Toast.makeText(this, "View Requests clicked", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, EnquiriesActivity::class.java))
+//                startActivity(Intent(this, EnquiriesActivity::class.java))
             }
 
             listingTab?.setOnClickListener {

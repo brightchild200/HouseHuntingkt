@@ -1,23 +1,145 @@
 package com.example.househuntingkt
 
-class BuyerDashboardActivity  {}
-//
-//import android.content.Intent
-//import android.os.Bundle
-//import android.text.Editable
-//import android.text.TextWatcher
-//import android.widget.Button
-//import android.widget.EditText
-//import android.widget.ImageView
-//import android.widget.Toast
-//import androidx.appcompat.app.AppCompatActivity
-//import androidx.recyclerview.widget.LinearLayoutManager
-//import androidx.recyclerview.widget.RecyclerView
-//
+import android.content.Intent
+import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+
+class BuyerDashboardActivity : AppCompatActivity() {
+
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var propertyListBuyer: List<PropertyBuyer> // Define your property data model
+    private lateinit var backButton: ImageView
+    private lateinit var vashi: Button
+    private lateinit var seawoods: Button
+    private lateinit var nerul: Button
+    private lateinit var searchBar: EditText
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.buyer_dashboard) // Set dashboard as the main layout
+
+        // Initialize views
+        backButton = findViewById(R.id.menu)
+        searchBar = findViewById(R.id.searchBar)
+        vashi = findViewById(R.id.btnCity2)
+        seawoods = findViewById(R.id.btnCity3)
+        nerul = findViewById(R.id.btnCity1)
+
+        val navSearch = findViewById<ImageView>(R.id.nav_search)
+        val navWishlist = findViewById<ImageView>(R.id.nav_wishlist)
+        val navHome = findViewById<ImageView>(R.id.nav_home)
+        val navBooked = findViewById<ImageView>(R.id.nav_booked)
+        val navProfile = findViewById<ImageView>(R.id.nav_profile)
+
+
+//        navSearch.setOnClickListener {
+//            startActivity(Intent(this, BuyerSearchActivity::class.java))
+//            finish()
+//        }
+
+        navWishlist.setOnClickListener {
+            startActivity(Intent(this, BuyerWishlistActivity::class.java))
+            finish()
+        }
+
+        navHome.setOnClickListener {
+            startActivity(Intent(this, BuyerDashboardActivity::class.java)) // or BuyerHomeActivity if separate
+            finish()
+        }
+
+//        navBooked.setOnClickListener {
+//            startActivity(Intent(this, BuyerBookingActivity::class.java))
+//            finish()
+//        }
+
+//        navProfile.setOnClickListener {
+//            startActivity(Intent(this, BuyerProfileActivity::class.java))
+//            finish()
+//        }
+
+        // Initialize the property list with some data
+        // Initialize the property list with some data
+        propertyListBuyer = listOf(
+            PropertyBuyer(
+                R.drawable.pg1,
+                "Krishna Vandana PG",
+                "Vichumbe, Panvel, Navi Mumbai",
+                "Our PG Basis is available in the same flat In one flat family as well as separately staying girls on another side with a Separate toilet Bathroom, Cot, Bed Cupboard, Kitchen events available TV.\n"
+            ),
+            PropertyBuyer(
+                R.drawable.pg2,
+                "Silver Park Residency",
+                "Karanjade, New Panvel",
+                "Move into Rashi, a professionally managed PG home in Karanjade, navi mumbai. Located in a safe neighborhood, this female PG offers various modern amenities for your comfort, such as Power Backup, TV, etc. This PG has Double Occupancy types. This PG is nearby major commercial and educational hubs. Please contact the seller to book this fast selling high in demand PG stay. \n"
+            ),
+            PropertyBuyer(
+                R.drawable.pg3,
+                "Arvind PG Panvel",
+                "Panvel, Navi Mumbai",
+                "Located in Panvel, Navi Mumbai, Arvind PG Panvel is a Modern and Spacious PG Home that is Close to Major Educational Commercial hubs in the area. This Unisex PG offers all the Comforts like TV, AC, Food, Power Backup, Wi-Fi, etc. The PG has Strict Adherence to hygiene Standards and offers Single, Double, Triple, and Four Rooms. Please contact me in case you are interested or have Queried. Looking Forward to Serving you. \n"
+            ),
+            PropertyBuyer(
+                R.drawable.pg4,
+                "Swami PG",
+                "New Panvel, Navi Mumbai",
+                "Move into Swami PG, a professionally managed PG home in the New Panvel, Navi Mumbai. Located in a safe neighborhood, this male PG offers various modern amenities for your comfort. This PG has double occupancy types. This PG is nearby major commercial and educational hubs. Please contact the seller to book this fast selling high in demand PG stay. \n"
+            ),
+            PropertyBuyer(
+                R.drawable.pg5,
+                "Kathani Housing Society",
+                "Nerul, Navi Mumbai",
+                "Welcome to Kathani Housing Society, a well-maintained residential property located in the heart of Nerul, one of the most sought-after localities in Navi Mumbai. The society offers a blend of comfort, convenience, and community living, making it an ideal choice for families, working professionals, and students. \n"
+            ),
+            PropertyBuyer(
+                R.drawable.pg6,
+                "Kathani Housing Society",
+                "Nerul, Navi Mumbai",
+                "Welcome to Kathani Housing Society, a well-maintained residential property located in the heart of Nerul, one of the most sought-after localities in Navi Mumbai. The society offers a blend of comfort, convenience, and community living, making it an ideal choice for families, working professionals, and students. \n"
+            ),
+        )
+
+        // Set up the RecyclerView
+        recyclerView = findViewById(R.id.recyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = BuyerPropertyAdapter(propertyListBuyer) // Connect the adapter to the RecyclerView
+
+        // Search functionality
+        searchBar.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+            override fun afterTextChanged(s: Editable?) {
+                when (s.toString().trim().lowercase()) {
+                    "vashi" -> {
+                        val intent = Intent(this@BuyerDashboardActivity, Vashi::class.java)
+                        startActivity(intent)
+                    }
+                    "nerul" -> {
+                        val intent = Intent(this@BuyerDashboardActivity, Nerul::class.java)
+                        startActivity(intent)
+                    }
+                    else -> {
+                        Toast.makeText(this@BuyerDashboardActivity, "City not found", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
+        })
+    }
+}
+
+
 //class BuyerDashboardActivity : AppCompatActivity() {
 //
 //    private lateinit var recyclerView: RecyclerView
-//    private lateinit var propertyList: List<Property> // Define your property data model
+//    private lateinit var propertyListBuyer: List<Property> // Define your property data model
 //    private lateinit var backButton: ImageView // Assuming backButton is an ImageView
 //    private lateinit var vashi: Button // Assuming panvelButton is a Button
 //    private lateinit var seawoods: Button // Assuming panvelButton is a Button
@@ -63,38 +185,38 @@ class BuyerDashboardActivity  {}
 ////        }
 ////
 //        // Initialize the property list with some data
-//        propertyList = listOf(
-//            Property(
+//        propertyListBuyer = listOf(
+//            PropertyBuyer(
 //                R.drawable.pg1,
 //                "Krishna Vandana PG",
 //                "Vichumbe, Panvel, Navi Mumbai",
 //                "Our PG Basis is available in the same flat In one flat family as well as separately staying girls on another side with a Separate toilet Bathroom, Cot, Bed Cupboard, Kitchen events available TV.\n"
 //            ),
-//            Property(
+//            PropertyBuyer(
 //                R.drawable.pg2,
 //                "Silver Park Residency",
 //                "Karanjade, New Panvel",
 //                "Move into Rashi, a professionally managed PG home in Karanjade, navi mumbai. Located in a safe neighborhood, this female PG offers various modern amenities for your comfort, such as Power Backup, TV, etc. This PG has Double Occupancy types. This PG is nearby major commercial and educational hubs. Please contact the seller to book this fast selling high in demand PG stay. \n"
 //            ),
-//            Property(
+//            PropertyBuyer(
 //                R.drawable.pg3,
 //                "Arvind PG Panvel",
 //                "Panvel, Navi Mumbai",
 //                "Located in Panvel, Navi Mumbai, Arvind PG Panvel is a Modern and Spacious PG Home that is Close to Major Educational Commercial hubs in the area. This Unisex PG offers all the Comforts like TV, AC, Food, Power Backup, Wi-Fi, etc. The PG has Strict Adherence to hygiene Standards and offers Single, Double, Triple, and Four Rooms. Please contact me in case you are interested or have Queried. Looking Forward to Serving you. \n"
 //            ),
-//            Property(
+//            PropertyBuyer(
 //                R.drawable.pg4,
 //                "Swami PG",
 //                "New Panvel, Navi Mumbai",
 //                "Move into Swami PG, a professionally managed PG home in the New Panvel, Navi Mumbai. Located in a safe neighborhood, this male PG offers various modern amenities for your comfort. This PG has double occupancy types. This PG is nearby major commercial and educational hubs. Please contact the seller to book this fast selling high in demand PG stay. \n"
 //            ),
-//            Property(
+//            PropertyBuyer(
 //                R.drawable.pg5,
 //                "Kathani Housing Society",
 //                "Nerul, Navi Mumbai",
 //                "Welcome to Kathani Housing Society, a well-maintained residential property located in the heart of Nerul, one of the most sought-after localities in Navi Mumbai. The society offers a blend of comfort, convenience, and community living, making it an ideal choice for families, working professionals, and students. \n"
 //            ),
-//            Property(
+//            PropertyBuyer(
 //                R.drawable.pg6,
 //                "Kathani Housing Society",
 //                "Nerul, Navi Mumbai",
@@ -107,7 +229,7 @@ class BuyerDashboardActivity  {}
 //            findViewById(R.id.recyclerView) // This assumes your RecyclerView ID is 'recyclerView' in dashboard.xml
 //        recyclerView.layoutManager = LinearLayoutManager(this)
 //        recyclerView.adapter =
-//            PropertyAdapter(propertyList) // Connect the adapter to the RecyclerView
+//            BuyerPropertyAdapter(propertyListBuyer) // Connect the adapter to the RecyclerView
 //
 //        // Search functionality to redirect to PanvelActivity if "Panvel" is searched
 //        searchBar.addTextChangedListener(object : TextWatcher {
