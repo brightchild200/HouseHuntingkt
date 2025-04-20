@@ -34,7 +34,7 @@ class EnquiriesActivity : AppCompatActivity() {
         linearLayout = findViewById(R.id.enquire)
         backButton = findViewById(R.id.backArrow)
         navBar = findViewById(R.id.sellerNavBar)
-        navEnquiries = navBar.findViewById(R.id.nav_enquiries) // Adjust ID based on seller_navbar.xml
+        navEnquiries = navBar.findViewById(R.id.nav_bookings) // Adjust ID based on seller_navbar.xml
 
         // Set up back button click listener and touch delegate
         backButton.setOnClickListener {
