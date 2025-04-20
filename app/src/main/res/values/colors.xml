@@ -10,6 +10,7 @@
 <color name="primary">#58800F</color> <!-- Green for highlight/buttons -->
 <color name="primary_dark">#388E3C</color> <!-- Darker green -->
 <color name="accent">#FF5722</color> <!-- Orange (secondary accent) -->
+    <color name="teal_700">#00796B</color>
 
 <!-- Text Colors -->
 <color name="text_primary">#212121</color> <!-- Main text -->

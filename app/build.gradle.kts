@@ -56,9 +56,9 @@ dependencies {
     implementation ("com.google.firebase:firebase-firestore:24.9.0")
 
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation("com.google.android.gms:play-services-maps:19.1.0")
-    implementation ("com.google.android.gms:play-services-location:21.0.1")
-    // Import the Firebase BoM
+//    implementation("com.google.android.gms:play-services-maps:19.1.0")
+//    implementation ("com.google.android.gms:play-services-location:21.0.1")
+//    // Import the Firebase BoM
     implementation(platform("com.google.firebase:firebase-bom:33.12.0"))
 
     // TODO: Add the dependencies for Firebase products you want to use
@@ -84,6 +84,9 @@ dependencies {
     implementation ("androidx.recyclerview:recyclerview:1.3.2")
     implementation ("com.squareup.picasso:picasso:2.71828")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.16.0")
+    implementation ("androidx.appcompat:appcompat:1.6.1")
+    implementation ("androidx.constraintlayout:constraintlayout:2.1.4")
+
 
 }
 

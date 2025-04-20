@@ -59,16 +59,16 @@
                     android:id="@+id/email_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="10dp"
                     android:textSize="20dp"
                     android:backgroundTint="@color/material_dynamic_neutral_variant20"
                     android:text="Email" />
 
                 <Button
                     android:id="@+id/whatsapp_btn"
-                    android:layout_width="156dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="100dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
                     android:backgroundTint="@color/material_dynamic_neutral_variant20"
                     android:text="WhatsApp"
                     android:textSize="20dp" />
@@ -77,11 +77,9 @@
                     android:id="@+id/actionButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="10dp"
                     android:textSize="20dp"
                     android:backgroundTint="@color/material_dynamic_neutral_variant20"
-                    android:text="Action"
-                    android:layout_marginTop="8dp"
                     android:textColor="#fff"/>
 
 

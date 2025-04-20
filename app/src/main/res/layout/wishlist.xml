@@ -14,24 +14,23 @@
 
         <ImageView
             android:id="@+id/backArrow"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/arrow"
-            android:contentDescription="Back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:padding="8dp"
             android:clickable="true"
-            android:focusable="true" />
+            android:focusable="true"
+            android:contentDescription="@string/back_description"
+            android:src="@drawable/arrow" />
+
 
         <ImageView
             android:id="@+id/logo"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_width="217dp"
+            android:layout_height="65dp"
             android:layout_centerInParent="true"
-            android:src="@drawable/wobg"
+            android:adjustViewBounds="true"
             android:contentDescription="Logo"
-            android:adjustViewBounds="true" />
+            android:src="@drawable/wobg" />
     </RelativeLayout>
 
     <!-- Scrollable Card List -->

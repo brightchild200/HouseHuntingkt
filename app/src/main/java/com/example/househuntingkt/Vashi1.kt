@@ -7,24 +7,24 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
+//import com.google.android.gms.maps.CameraUpdateFactory
+//import com.google.android.gms.maps.GoogleMap
+//import com.google.android.gms.maps.OnMapReadyCallback
+//import com.google.android.gms.maps.SupportMapFragment
+//import com.google.android.gms.maps.model.LatLng
+//import com.google.android.gms.maps.model.MarkerOptions
 
-class Vashi1 : AppCompatActivity(), OnMapReadyCallback {
+class Vashi1 : AppCompatActivity() {
 
-    private lateinit var mMap: GoogleMap
+//    private lateinit var mMap: GoogleMap
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.vashi1)
 
-        // **📌 Initialize Map Fragment**
-        val mapFragment = supportFragmentManager.findFragmentById(R.id.mapContainer) as SupportMapFragment
-        mapFragment.getMapAsync(this)
+//        // **📌 Initialize Map Fragment**
+//        val mapFragment = supportFragmentManager.findFragmentById(R.id.mapContainer) as SupportMapFragment
+//        mapFragment.getMapAsync(this)
 
 
 
@@ -51,12 +51,12 @@ class Vashi1 : AppCompatActivity(), OnMapReadyCallback {
         }
     }
 
-    override fun onMapReady(googleMap: GoogleMap) {
-        mMap = googleMap
-
-        // **📍 Vashi1 House Location**
-        val houseLocation = LatLng(19.077064, 72.998993) // Replace with actual lat/lng
-        mMap.addMarker(MarkerOptions().position(houseLocation).title("West End, Near Inorbit Mall, Vashi"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(houseLocation, 15f))
-    }
+//    override fun onMapReady(googleMap: GoogleMap) {
+//        mMap = googleMap
+//
+//        // **📍 Vashi1 House Location**
+//        val houseLocation = LatLng(19.077064, 72.998993) // Replace with actual lat/lng
+//        mMap.addMarker(MarkerOptions().position(houseLocation).title("West End, Near Inorbit Mall, Vashi"))
+//        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(houseLocation, 15f))
+//    }
 }

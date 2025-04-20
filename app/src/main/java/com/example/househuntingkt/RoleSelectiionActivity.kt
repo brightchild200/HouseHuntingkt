@@ -25,27 +25,34 @@ class RoleSelectiionActivity : AppCompatActivity() {
 
         val userId = auth.currentUser?.uid
 
+        // Set the role to Buyer
         buyerButton.setOnClickListener {
             userId?.let {
-                // Set the role to Buyer
                 db.collection("users").document(it)
                     .update("role", "buyer")
                     .addOnSuccessListener {
                         val intent = Intent(this, DashboardActivity::class.java)
-                        intent.putExtra("role", "buyer") // ✅ Pass the role here!
+                        intent.putExtra("role", "buyer") // Pass the buyer role
                         startActivity(intent)
+                    }
+                    .addOnFailureListener {
+                        // Handle error if setting role fails
                     }
             }
         }
 
+        // Set the role to Seller
         sellerButton.setOnClickListener {
             userId?.let { uid ->
                 db.collection("users").document(uid)
-                    .set(mapOf("role" to "buyer"), SetOptions.merge())
+                    .set(mapOf("role" to "seller"), SetOptions.merge()) // Set role to seller
                     .addOnSuccessListener {
                         val intent = Intent(this, DashboardActivity::class.java)
-                        intent.putExtra("role", "seller")
+                        intent.putExtra("role", "seller") // Pass the seller role
                         startActivity(intent)
+                    }
+                    .addOnFailureListener {
+                        // Handle error if setting role fails
                     }
             }
         }
