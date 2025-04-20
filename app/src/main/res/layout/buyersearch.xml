@@ -39,7 +39,7 @@
     <!-- Search Bar with Icon -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="56dp"
         android:orientation="horizontal"
         android:layout_marginTop="8dp"
         android:background="@drawable/edit_text_background"
@@ -57,10 +57,13 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:minHeight="48dp"
             android:hint="Search for the property"
             android:background="@null"
             android:inputType="text"
             android:paddingStart="8dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
             android:textSize="16sp" />
     </LinearLayout>
 
