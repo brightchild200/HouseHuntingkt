@@ -9,4 +9,7 @@
     <string name="message_description">Send message</string>
     <string name="call_description">Make call</string>
     <string name="profile_image_description">Profile picture</string>
+    <string name="back_description">Back Arrow</string> <!-- Added to fix the error -->
+    <string name="house_image_description">House Image</string> <!-- Added for ImageView content -->
+    <string name="enquiries_icon">Enquiries Icon</string> <!-- Added for accessibility -->
 </resources>

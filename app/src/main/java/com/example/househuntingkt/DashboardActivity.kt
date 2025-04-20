@@ -74,7 +74,7 @@ class DashboardActivity : AppCompatActivity() {
 
         if (role == "seller") {
             addPropertyTab = navbarView.findViewById(R.id.nav_property)
-            enquireTab = navbarView.findViewById(R.id.nav_bookings)
+            enquireTab = navbarView.findViewById(R.id.nav_enquiries)
             listingTab = navbarView.findViewById(R.id.nav_listings)
 
             addPropertyTab?.setOnClickListener {
