@@ -88,9 +88,8 @@
         </LinearLayout>
 
         <!-- Requests -->
-        <!-- Enquiries -->
         <LinearLayout
-            android:id="@+id/nav_enquiries"
+            android:id="@+id/nav_bookings"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -100,11 +99,10 @@
             <ImageView
                 android:layout_width="28dp"
                 android:layout_height="28dp"
-                android:src="@drawable/booked"
-                android:contentDescription="@string/enquiries_icon" />
+                android:src="@drawable/booked" />
 
             <TextView
-                android:text="Enquiries"
+                android:text="Enquires"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/text_secondary"
