@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 <!--    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />-->
 <!--    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
 <!--    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />-->
@@ -34,7 +35,10 @@
         <activity android:name=".Nerul1" />
         <activity android:name=".Vashi" />
         <activity android:name=".Vashi1" />
-        <activity android:name=".EnquiriesActivity" />
+        <activity android:name=".PropertyBuyer" />
+        <activity android:name=".Buyer" />
+        <activity android:name=".BuyerWishlistActivity" />
+<!--        <activity android:name=".EnquiriesActivity" />-->
         <activity android:name=".PanvelPg1" />
         <activity android:name=".PropertyAdapter" />
         <activity android:name=".BuyerDashboardActivity" />

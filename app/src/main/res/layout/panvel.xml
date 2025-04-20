@@ -126,7 +126,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:text="Silver Park Residency"
+                        android:text="Kathani PG Residency"
                         android:textColor="#454545"
                         android:textSize="21sp"
                         android:textStyle="bold"
@@ -139,7 +139,7 @@
                         android:textSize="20dp"
                         android:fontFamily="@font/zillaslab_semibolditalic"
                         android:layout_marginStart="8dp"
-                        android:text="Karanjade, New Panvel" />
+                        android:text="Nerul, Navi Mumbai" />
 
                     <TextView
                         android:id="@+id/property_de2"
@@ -148,7 +148,7 @@
                         android:textSize="16dp"
                         android:fontFamily="@font/zillaslab_semibolditalic"
                         android:layout_marginStart="8dp"
-                        android:text="Move into Rashi, a professionally managed PG home in Karanjade, navi mumbai. Located in a safe neighborhood, this female PG offers various modern amenities for your comfort, such as Power Backup, TV, etc. This PG has Double Occupancy types. This PG is nearby major commercial and educational hubs. Please contact the seller to book this fast selling high in demand PG stay. " />
+                        android:text="Welcome to Kathani Housing Society, a well-maintained residential property located in the heart of Nerul, one of the most sought-after localities in Navi Mumbai. The society offers a blend of comfort, convenience, and community living, making it an ideal choice for families, working professionals, and students." />
 
 
                     <LinearLayout
@@ -219,7 +219,7 @@
                         android:textSize="20dp"
                         android:fontFamily="@font/zillaslab_semibolditalic"
                         android:layout_marginStart="8dp"
-                        android:text="Panvel, Navi Mumbai" />
+                        android:text="West End ,Near Inorbit Mall,Vashi" />
 
                     <TextView
                         android:id="@+id/property_de3"
@@ -228,7 +228,7 @@
                         android:textSize="16dp"
                         android:fontFamily="@font/zillaslab_semibolditalic"
                         android:layout_marginStart="8dp"
-                        android:text="Located in Panvel, Navi Mumbai, Arvind PG Panvel is a Modern and Spacious PG Home that is Close to Major Educational Commercial hubs in the area. This Unisex PG offers all the Comforts like TV, AC, Food, Power Backup, Wi-Fi, etc. The PG has Strict Adherence to hygiene Standards and offers Single, Double, Triple, and Four Rooms. Please contact me in case you are interested or have Queried. Looking Forward to Serving you " />
+                        android:text="Located in Vashi, Navi Mumbai, Arvind PG Panvel is a Modern and Spacious PG Home that is Close to Major Educational Commercial hubs in the area. This Unisex PG offers all the Comforts like TV, AC, Food, Power Backup, Wi-Fi, etc. The PG has Strict Adherence to hygiene Standards and offers Single, Double, Triple, and Four Rooms. Please contact me in case you are interested or have Queried. Looking Forward to Serving you " />
 
 
 

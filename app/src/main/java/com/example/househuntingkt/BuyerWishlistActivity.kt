@@ -1,22 +1,50 @@
 package com.example.househuntingkt
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.cardview.widget.CardView
+//import com.example.househuntingkt.R
 
+class BuyerWishlistActivity : AppCompatActivity() {
+
+    private lateinit var backArrow: ImageView
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.wishlist) // Replace with your actual XML file name
+
+        backArrow = findViewById(R.id.backArrow)
+        backArrow.setOnClickListener {
+            onBackPressed()
+        }
+
+
+
+        // Optional: Dynamic implementation (later can load wishlist from Firestore)
+        // For now, all cards are static from the XML
+    }
+}
+
+
+//package com.example.househuntingkt
+//
+//import android.os.Bundle
+//import android.view.LayoutInflater
+//import android.widget.ImageView
+//import android.widget.LinearLayout
+//import android.widget.TextView
+//import androidx.appcompat.app.AppCompatActivity
+//import androidx.cardview.widget.CardView
+//
 //data class WishlistItem(
 //    val location: String,
 //    val owner: String,
 //    val status: String,
 //    val imageResId: Int
 //)
-
-class WishlistActivity : AppCompatActivity() {
-
+//
+//class WishlistActivity : AppCompatActivity() {
+//
 //    override fun onCreate(savedInstanceState: Bundle?) {
 //        super.onCreate(savedInstanceState)
 //        setContentView(R.layout.wishlist)
@@ -27,7 +55,7 @@ class WishlistActivity : AppCompatActivity() {
 //        }
 //
 //        // Get the LinearLayout inside ScrollView
-//        val wishlistContainer = findViewById<LinearLayout>(R.id.wishlistLinearLayout)
+//        val wishlistContainer = findViewById<LinearLayout>(R.id.wishlist)
 //
 //        // Mock wishlist data (replace with actual data source)
 //        val wishlistItems = listOf(
@@ -54,4 +82,4 @@ class WishlistActivity : AppCompatActivity() {
 //            wishlistContainer.addView(cardView)
 //        }
 //    }
-}
+//}

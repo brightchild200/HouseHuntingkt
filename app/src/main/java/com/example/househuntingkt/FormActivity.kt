@@ -37,9 +37,7 @@ class FormActivity : AppCompatActivity() {
     private lateinit var imagePreviewList: RecyclerView
     private lateinit var submitButton: Button
     private lateinit var imagePreviewAdapter: ImagePreviewAdapter
-    val backArrow = findViewById<ImageView>(R.id.backArrow)
     val sellerId = FirebaseAuth.getInstance().currentUser?.uid ?: ""
-
 
     private var imageUris: ArrayList<String> = ArrayList()
 
@@ -47,10 +45,11 @@ class FormActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.pgform)
 
+        val backArrow = findViewById<ImageView>(R.id.backArrow)
+
         backArrow.setOnClickListener {
             finish()  // just closes FormActivity and goes back to DashboardActivity
         }
-
 
 //        backArrow.setOnClickListener {
 //            val intent = Intent(this, DashboardActivity::class.java)
