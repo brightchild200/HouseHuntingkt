@@ -10,9 +10,15 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class PropertyAdapter(private val propertyList: List<Property>) :
-    RecyclerView.Adapter<PropertyAdapter.PropertyViewHolder>() {
+class PropertyAdapter(
+    private val propertyList: List<Property>,
+    private val context: Context,
+    private val isSellerView: Boolean = false,  // Boolean flag to distinguish views
+    private val deleteFunction: ((Property) -> Unit)? = null,  // Function for delete action
+    private val wishlistFunction: ((Property) -> Unit)? = null  // Function for wishlist action
+) : RecyclerView.Adapter<PropertyAdapter.PropertyViewHolder>() {
 
+    // ViewHolder class for binding data
     class PropertyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val title: TextView = itemView.findViewById(R.id.propertyTitle)
         val location: TextView = itemView.findViewById(R.id.propertyLocation)
@@ -20,14 +26,16 @@ class PropertyAdapter(private val propertyList: List<Property>) :
         val image: ImageView = itemView.findViewById(R.id.propertyImage)
         val emailButton: Button = itemView.findViewById(R.id.email_btn)
         val whatsappButton: Button = itemView.findViewById(R.id.whatsapp_btn)
-//        val deleteBtn: Button = itemView.findViewById(R.id.deleteButton)
+        val actionButton: Button = itemView.findViewById(R.id.actionButton)  // Common action button
     }
 
+    // Creating a view holder for each item
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PropertyViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.property_item, parent, false)
         return PropertyViewHolder(view)
     }
 
+    // Binding data to the view holder
     override fun onBindViewHolder(holder: PropertyViewHolder, position: Int) {
         val property = propertyList[position]
         holder.title.text = property.title
@@ -35,31 +43,42 @@ class PropertyAdapter(private val propertyList: List<Property>) :
         holder.price.text = "₹${property.price}"
         Glide.with(holder.itemView.context).load(property.imageUrl).into(holder.image)
 
-//        holder.deleteBtn.setOnClickListener {
-//            deleteFunction(property)
-//        }
-
-            // Email button logic
-            holder.emailButton.setOnClickListener {
-                val intent = android.content.Intent(android.content.Intent.ACTION_SENDTO).apply {
-                    data = android.net.Uri.parse("mailto:${property.email}")
-                }
-                holder.itemView.context.startActivity(intent)
+        // Action button logic for seller and buyer
+        if (isSellerView) {
+            holder.actionButton.text = "Delete"
+            holder.actionButton.setBackgroundColor(context.getColor(R.color.red))  // Optional: Customize color
+            holder.actionButton.setOnClickListener {
+                deleteFunction?.invoke(property)  // Execute delete function if defined
             }
-
-            // WhatsApp/Dialer button logic
-            holder.whatsappButton.setOnClickListener {
-                val intent = android.content.Intent(android.content.Intent.ACTION_DIAL).apply {
-                    data = android.net.Uri.parse("tel:${property.mobile}")
-                }
-                holder.itemView.context.startActivity(intent)
+        } else {
+            holder.actionButton.text = "Wishlist"
+            holder.actionButton.setBackgroundColor(context.getColor(R.color.teal_700))  // Optional: Customize color
+            holder.actionButton.setOnClickListener {
+                wishlistFunction?.invoke(property)  // Execute wishlist function if defined
             }
         }
 
+        // Email button logic
+        holder.emailButton.setOnClickListener {
+            val intent = android.content.Intent(android.content.Intent.ACTION_SENDTO).apply {
+                data = android.net.Uri.parse("mailto:${property.email}")
+            }
+            holder.itemView.context.startActivity(intent)
+        }
 
+        // WhatsApp/Dialer button logic
+        holder.whatsappButton.setOnClickListener {
+            val intent = android.content.Intent(android.content.Intent.ACTION_DIAL).apply {
+                data = android.net.Uri.parse("tel:${property.mobile}")
+            }
+            holder.itemView.context.startActivity(intent)
+        }
+    }
 
+    // Return the total number of properties
     override fun getItemCount(): Int = propertyList.size
 }
+
 
 
 //package com.example.househuntingkt

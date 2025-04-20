@@ -6,9 +6,9 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<!--    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />-->
+<!--    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
+<!--    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />-->
 
     <application
         android:allowBackup="true"
@@ -26,7 +26,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -35,6 +34,7 @@
         <activity android:name=".Nerul1" />
         <activity android:name=".Vashi" />
         <activity android:name=".Vashi1" />
+        <activity android:name=".EnquiriesActivity" />
         <activity android:name=".PanvelPg1" />
         <activity android:name=".PropertyAdapter" />
         <activity android:name=".BuyerDashboardActivity" />
@@ -43,26 +43,11 @@
         <activity android:name=".DashboardActivity" />
         <activity android:name=".RoleSelectiionActivity" />
         <activity android:name=".SellerProfileActivity" />
-        <activity android:name=".ListingsActivity" />
+        <activity android:name=".SellerListingActivity" />
 
-
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBuJ96F4g_49fpkhVfAHC2voy-RMYi6i90" />
-
-        <service
-            android:name="android.speech.RecognitionService"
-            android:permission="android.permission.BIND_SPEECH_RECOGNITION_SERVICE"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.speech.RecognitionService" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </service>
-
+<!--        <meta-data-->
+<!--            android:name="com.google.android.geo.API_KEY"-->
+<!--            android:value="AIzaSyBuJ96F4g_49fpkhVfAHC2voy-RMYi6i90" />-->
     </application>
 
 </manifest>

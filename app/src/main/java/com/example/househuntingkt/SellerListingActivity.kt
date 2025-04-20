@@ -13,63 +13,80 @@ class SellerListingActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var propertyAdapter: PropertyAdapter
-    private lateinit var auth: FirebaseAuth
+    private lateinit var propertyList: MutableList<Property>
     private lateinit var db: FirebaseFirestore
-    private val propertyList = mutableListOf<Property>()
+    private lateinit var backArrow: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.listing)
 
+        // Initialize Firebase and data list
+        db = FirebaseFirestore.getInstance()
+        propertyList = mutableListOf()
+
+        // RecyclerView setup
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        propertyAdapter = PropertyAdapter(propertyList, this, ::deleteProperty)
+
+        // Correct parameter order for PropertyAdapter
+        propertyAdapter = PropertyAdapter(
+            propertyList = propertyList,  // List of properties to display
+            context = this,  // Activity context
+            isSellerView = true  // True for seller view, false for buyer view
+        )
         recyclerView.adapter = propertyAdapter
 
-        auth = FirebaseAuth.getInstance()
-        db = FirebaseFirestore.getInstance()
-
-        val currentUserId = auth.currentUser?.uid
-
-        val backArrow = findViewById<ImageView>(R.id.backArrow)
-        backArrow.setOnClickListener { finish() }
-
-        if (currentUserId != null) {
-            db.collection("properties")
-                .whereEqualTo("sellerId", currentUserId)
-                .get()
-                .addOnSuccessListener { documents ->
-                    propertyList.clear()
-                    for (doc in documents) {
-                        val property = doc.toObject(Property::class.java)
-                        propertyList.add(property)
-                    }
-                    propertyAdapter.notifyDataSetChanged()
-                }
-                .addOnFailureListener { e ->
-                    Toast.makeText(this, "Failed to load listings: ${e.message}", Toast.LENGTH_SHORT).show()
-                }
+        // Back arrow logic
+        backArrow = findViewById(R.id.backArrow)
+        backArrow.setOnClickListener {
+            finish() // go back to the previous screen
         }
+
+        // Fetch properties for seller
+        fetchSellerProperties()
     }
 
-    private fun deleteProperty(property: Property) {
-        db.collection("properties")
-            .whereEqualTo("sellerId", auth.currentUser?.uid)
-            .whereEqualTo("title", property.title)
+    private fun fetchSellerProperties() {
+        val currentUser = FirebaseAuth.getInstance().currentUser
+        val sellerEmail = currentUser?.email
+
+        if (sellerEmail == null) {
+            Toast.makeText(this, "User not logged in", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        db.collection("PGs")
+            .whereEqualTo("email", sellerEmail)
             .get()
-            .addOnSuccessListener { documents ->
-                for (doc in documents) {
-                    db.collection("properties").document(doc.id)
-                        .delete()
-                        .addOnSuccessListener {
-                            Toast.makeText(this, "Property deleted", Toast.LENGTH_SHORT).show()
-                            propertyList.remove(property)
-                            propertyAdapter.notifyDataSetChanged()
-                        }
-                        .addOnFailureListener {
-                            Toast.makeText(this, "Error deleting property", Toast.LENGTH_SHORT).show()
-                        }
+            .addOnSuccessListener { result ->
+                propertyList.clear()
+                for (document in result) {
+                    val name = document.getString("name") ?: ""
+                    val location = document.getString("location") ?: ""
+                    val price = document.getString("price") ?: ""
+                    val description = document.getString("description") ?: ""
+                    val email = document.getString("email") ?: ""
+                    val mobile = document.getString("whatsapp") ?: ""
+                    val images = document.get("images") as? ArrayList<String> ?: arrayListOf()
+                    val imageUrl = if (images.isNotEmpty()) images[0] else ""
+
+                    propertyList.add(
+                        Property(
+                            imageUrl,
+                            name,
+                            location,
+                            description,
+                            price,
+                            email,
+                            mobile
+                        )
+                    )
                 }
+                propertyAdapter.notifyDataSetChanged()  // Notify the adapter to update the UI
+            }
+            .addOnFailureListener {
+                Toast.makeText(this, "Failed to fetch properties", Toast.LENGTH_SHORT).show()
             }
     }
 }

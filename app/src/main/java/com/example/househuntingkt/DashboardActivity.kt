@@ -55,9 +55,22 @@ class DashboardActivity : AppCompatActivity() {
         }
         navbarContainer.addView(navbarView)
 
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+
         // Assign views
         homeTab = navbarView.findViewById(R.id.nav_home)
         profileTab = navbarView.findViewById(R.id.nav_profile)
+
+        // ✅ Works for both buyer and seller
+        homeTab?.setOnClickListener {
+            val role = intent.getStringExtra("role") ?: "buyer"
+            val intent = Intent(this, DashboardActivity::class.java)
+            intent.putExtra("role", role)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+            startActivity(intent)
+            finish()
+        }
+
 
         if (role == "seller") {
             addPropertyTab = navbarView.findViewById(R.id.nav_property)
@@ -76,7 +89,7 @@ class DashboardActivity : AppCompatActivity() {
 
             listingTab?.setOnClickListener {
                 Toast.makeText(this, "Listings clicked", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, ListingsActivity::class.java))
+                startActivity(Intent(this, SellerListingActivity::class.java))
             }
         }
 
@@ -117,7 +130,17 @@ class DashboardActivity : AppCompatActivity() {
         // RecyclerView setup
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = PropertyAdapter(propertyList)
+//        recyclerView.adapter = PropertyAdapter(propertyList)
+        recyclerView.adapter = PropertyAdapter(
+            propertyList,
+            context = this,
+            isSellerView = false,
+            wishlistFunction = { property ->
+                Toast.makeText(this, "Added ${property.title} to wishlist!", Toast.LENGTH_SHORT).show()
+                // TODO: Add to wishlist Firestore logic here
+            }
+        )
+
 
         // Search bar
         searchBar = findViewById(R.id.searchBar)

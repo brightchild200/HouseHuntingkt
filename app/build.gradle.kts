@@ -56,9 +56,9 @@ dependencies {
     implementation ("com.google.firebase:firebase-firestore:24.9.0")
 
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation("com.google.android.gms:play-services-maps:19.1.0")
-    implementation ("com.google.android.gms:play-services-location:21.0.1")
-    // Import the Firebase BoM
+//    implementation("com.google.android.gms:play-services-maps:19.1.0")
+//    implementation ("com.google.android.gms:play-services-location:21.0.1")
+//    // Import the Firebase BoM
     implementation(platform("com.google.firebase:firebase-bom:33.12.0"))
 
     // TODO: Add the dependencies for Firebase products you want to use
