@@ -42,6 +42,9 @@
         <activity android:name=".FormActivity" />
         <activity android:name=".DashboardActivity" />
         <activity android:name=".RoleSelectiionActivity" />
+        <activity android:name=".SellerProfileActivity" />
+        <activity android:name=".ListingsActivity" />
+
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -53,6 +56,10 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.speech.RecognitionService" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </service>
 

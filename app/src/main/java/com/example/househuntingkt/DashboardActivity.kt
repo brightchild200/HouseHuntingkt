@@ -20,12 +20,12 @@ class DashboardActivity : AppCompatActivity() {
     private lateinit var searchBar: EditText
     private lateinit var db: FirebaseFirestore
 
-    // City buttons (optional)
+    // City buttons
     private lateinit var vashi: Button
     private lateinit var seawoods: Button
     private lateinit var nerul: Button
 
-    // Nav layout views
+    // Bottom nav views
     private var addPropertyTab: LinearLayout? = null
     private var enquireTab: LinearLayout? = null
     private var homeTab: LinearLayout? = null
@@ -45,17 +45,17 @@ class DashboardActivity : AppCompatActivity() {
         val role = intent.getStringExtra("role") ?: "buyer"
         Toast.makeText(this, "Logged in as $role", Toast.LENGTH_SHORT).show()
 
+        // Inflate nav bar dynamically
         val navbarContainer = findViewById<FrameLayout>(R.id.navbar_container)
         val inflater = LayoutInflater.from(this)
         val navbarView: View = when (role.lowercase()) {
             "seller" -> inflater.inflate(R.layout.seller_navbar, navbarContainer, false)
             "buyer" -> inflater.inflate(R.layout.buyer_navbar, navbarContainer, false)
-            else -> inflater.inflate(R.layout.seller_navbar, navbarContainer, false) // fallback default
+            else -> inflater.inflate(R.layout.seller_navbar, navbarContainer, false)
         }
         navbarContainer.addView(navbarView)
 
-
-        // Bottom nav tabs
+        // Assign views
         homeTab = navbarView.findViewById(R.id.nav_home)
         profileTab = navbarView.findViewById(R.id.nav_profile)
 
@@ -73,16 +73,24 @@ class DashboardActivity : AppCompatActivity() {
                 Toast.makeText(this, "View Requests clicked", Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this, EnquiriesActivity::class.java))
             }
+
+            listingTab?.setOnClickListener {
+                Toast.makeText(this, "Listings clicked", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, ListingsActivity::class.java))
+            }
         }
 
         if (role == "buyer") {
             searchTab = navbarView.findViewById(R.id.nav_search)
             bookedTab = navbarView.findViewById(R.id.nav_booked)
-
             wishlistTab = navbarView.findViewById(R.id.nav_wishlist)
 
             searchTab?.setOnClickListener {
                 Toast.makeText(this, "Search clicked", Toast.LENGTH_SHORT).show()
+            }
+
+            bookedTab?.setOnClickListener {
+                Toast.makeText(this, "Booked clicked", Toast.LENGTH_SHORT).show()
             }
 
             wishlistTab?.setOnClickListener {
@@ -90,13 +98,12 @@ class DashboardActivity : AppCompatActivity() {
             }
         }
 
+        profileTab?.setOnClickListener {
+            val intent = Intent(this, SellerProfileActivity::class.java)
+            startActivity(intent)
+        }
 
-        // RecyclerView setup
-        recyclerView = findViewById(R.id.recyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = PropertyAdapter(propertyList)
-
-        // City buttons (optional)
+        // City Buttons
         nerul = findViewById(R.id.btnCity1)
         vashi = findViewById(R.id.btnCity2)
         seawoods = findViewById(R.id.btnCity3)
@@ -107,7 +114,12 @@ class DashboardActivity : AppCompatActivity() {
             Toast.makeText(this, "Coming soon!", Toast.LENGTH_SHORT).show()
         }
 
-        // SearchBar
+        // RecyclerView setup
+        recyclerView = findViewById(R.id.recyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = PropertyAdapter(propertyList)
+
+        // Search bar
         searchBar = findViewById(R.id.searchBar)
         searchBar.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
@@ -138,14 +150,12 @@ class DashboardActivity : AppCompatActivity() {
                     val description = document.getString("description") ?: ""
                     val email = document.getString("email") ?: ""
                     val mobile = document.getString("whatsapp") ?: ""
-
-                    // ✅ Yeh block add karo for image URL
                     val images = document.get("images") as? ArrayList<String> ?: arrayListOf()
                     val imageUrl = if (images.isNotEmpty()) images[0] else ""
 
                     propertyList.add(
                         Property(
-                            imageUrl,     // ← This is now dynamic
+                            imageUrl,
                             name,
                             location,
                             description,
@@ -162,7 +172,6 @@ class DashboardActivity : AppCompatActivity() {
             }
     }
 
-
     private fun searchFromFirestore(searchQuery: String) {
         db.collection("PGs")
             .orderBy("location")
@@ -178,7 +187,6 @@ class DashboardActivity : AppCompatActivity() {
                     val description = document.getString("description") ?: ""
                     val email = document.getString("email") ?: ""
                     val mobile = document.getString("whatsapp") ?: ""
-
                     val images = document.get("images") as? ArrayList<String> ?: arrayListOf()
                     val imageUrl = if (images.isNotEmpty()) images[0] else ""
 
@@ -201,8 +209,8 @@ class DashboardActivity : AppCompatActivity() {
                 Toast.makeText(this, "Search failed", Toast.LENGTH_SHORT).show()
             }
     }
-
 }
+
 
 
 
