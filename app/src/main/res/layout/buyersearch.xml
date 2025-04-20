@@ -5,47 +5,51 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="#FFF9FBFB">
+    android:background="#f5f5dc">
 
-    <!-- Top bar: Back arrow + Logo -->
+    <!-- Top Bar -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_marginBottom="24dp"
         android:gravity="center_vertical"
-        android:paddingBottom="16dp">
+        android:orientation="horizontal"
+        android:padding="8dp">
 
         <ImageView
-            android:id="@+id/back_arrow"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/ic_back_arrow"
-            android:contentDescription="Back" />
+            android:id="@+id/backArrow"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="8dp"
+            android:contentDescription="Back"
+            android:src="@drawable/arrow" />
 
         <ImageView
-            android:id="@+id/app_logo"
-            android:layout_width="wrap_content"
-            android:layout_height="32dp"
-            android:layout_marginStart="16dp"
-            android:src="@drawable/ic_house_logo"
-            android:contentDescription="House Hunting logo" />
+            android:id="@+id/imageView5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/horiblogo" />
     </LinearLayout>
 
-    <!-- Search bar -->
-    <EditText
-        android:id="@+id/search_bar"
+    <!-- Search Bar with Icon -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginTop="24dp"
-        android:hint="Search for the property"
-        android:padding="12dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
         android:background="@drawable/edit_text_background"
-        android:inputType="text" />
+        android:padding="8dp"
+        android:gravity="center_vertical">
 
-    <ImageView
+        <ImageView
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@drawable/ic_search"
+            android:src="@drawable/search"
             android:contentDescription="Search icon" />
 
         <EditText
@@ -60,13 +64,13 @@
             android:textSize="16sp" />
     </LinearLayout>
 
-    <!-- Search buttons -->
+    <!-- Search Buttons -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp">
 
         <Button
